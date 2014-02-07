@@ -7,7 +7,7 @@
           <strong>Price:&nbsp;<%= number_to_currency(product.price)%></strong>
           <br><br>
           <ul>
-          <li><%=button_to 'Add to Cart', store_url, :class => "btn btn-default"%></li>
+          <li><%=button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-default"%></li>
            <li><%=link_to 'View Detail', store_show_path(product_id: product, anchor: "detail"), :class => "btn btn-primary"%></li>
            </ul>
         </div><!-- /.col-lg-4 -->
