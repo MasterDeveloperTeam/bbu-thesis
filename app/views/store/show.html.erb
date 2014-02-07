@@ -1,0 +1,9 @@
+
+<a name="detail"></a>
+<div class="jumbotron">
+<%= image_tag(@product.image_url)%>
+  <h1><%= @product.title%></h1>
+  <p><%= @product.description%></p>
+  <strong>Price:&nbsp;<%=number_to_currency(@product.price)%></strong>
+  <p><%= button_to "Add to Cart", '' ,:class => "btn  btn-default btn-lg"%></p>
+</div>

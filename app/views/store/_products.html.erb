@@ -1,0 +1,16 @@
+ <%@products.each do |product|%>
+        <div class="col-lg-4">
+          <%=image_tag(product.image_url)%>
+          <h2><%=product.title%></h2>
+          <p><%=truncate(product.description, length: 120)%></p>
+          <br>
+          <strong>Price:&nbsp;<%= number_to_currency(product.price)%></strong>
+          <br><br>
+          <ul>
+          <li><%=button_to 'Add to Cart', store_url, :class => "btn btn-default"%></li>
+           <li><%=link_to 'View Detail', store_show_path(product_id: product, anchor: "detail"), :class => "btn btn-primary"%></li>
+           </ul>
+        </div><!-- /.col-lg-4 -->
+
+      <% end -%>
+       <span class="pull-right"><%=will_paginate @products%></span>
