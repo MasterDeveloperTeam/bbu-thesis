@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
 	has_many :line_items
+	belongs_to :user
 	before_destroy :ensure_not_referenced_with_any_line_items
 	validates_presence_of :title, :description, :price
 	validates :price, numericality: {greather_than_or_equal_to: 0.01}

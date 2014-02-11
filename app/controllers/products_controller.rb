@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, :unless => proc {|c| c.devise_controller?}
   # GET /products
   # GET /products.json
   def index
@@ -24,8 +26,9 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
 
+    @product = current_user.products.build(product_params)
+   
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
