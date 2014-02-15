@@ -1,20 +1,13 @@
-<h1>Your Ebook cart </h1>
-<%= link_to "Empty Cart", @cart, method: :delete, confirm: "Are you sure?", :class => "pull-right btn btn-warning"%>
-</div>
+<h3>Your Ebook cart </h3>
 
-<dl class="dl-horizontal">
-</dl>
-<table class="table">
-<tr>
-	<th>Title</th>
-	<th>Amount</th>
-	<th>Unit Price</th>
-	<th>Total Price</th>
-</tr>
-		<%=render(@cart.line_items)%>
-			<tr>
-				<td colspan="3" align="right"><h4>Total:</h4></td>
-				<td><h4 class="text-warning"><%=number_to_currency(@cart.total)%></h4></td>
-			</tr>
-		
-</table>
+<ul class="cart">
+		<%=render(cart.line_items)%>
+	
+				<li><p class="text-primary">Total:&nbsp;<%=number_to_currency(@cart.total)%></p></li>
+				
+				<%= link_to "Empty Cart", @cart, method: :delete, confirm: "Are you sure?", :class => "btn btn-warning"%>
+
+
+
+
+</ul>
