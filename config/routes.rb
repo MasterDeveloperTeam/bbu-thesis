@@ -1,4 +1,5 @@
 DepotTest::Application.routes.draw do
+  devise_for :admins
   devise_for :models
   devise_for :users
   resources :line_items

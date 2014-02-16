@@ -5,6 +5,13 @@
       -webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
       -moz-box-shadow:0px 0px px rgba(0,0,0,0.5);
 }
+
+@mixin outline-color($timer){
+   
+  -webkit-transition: all $timer  ease-in-out;
+  -moz-transition: all $timer  ease-in-out;
+       transition: all  $timer ease-in-out;
+}
 body {
   padding-top: 0px;
 }
@@ -80,4 +87,28 @@ ul.cart {
     padding: 5px;
     
   }
+}
+
+.col-lg-4{
+
+  img{
+    &:hover{
+    @include outline-color(.3s);   
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: #E7E7E7;
+    cursor: pointer;
+    
+    }
+  }
+
+}
+
+.cart-text{
+  color:#A50032;
+}
+
+h4.text-inverse{
+  color: #444;
+ 
 }

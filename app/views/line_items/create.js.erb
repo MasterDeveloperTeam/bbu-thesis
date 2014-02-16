@@ -1,0 +1,2 @@
+$("li#cart").html("<%=escape_javascript render(@cart)%>");
+$("span#cart").html("<%=escape_javascript(render(:partial => 'layouts/total_price.html.erb'))%>");
