@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'devise'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 gem 'better_errors'
 gem 'bootstrap-generators'
 gem 'simple_form'
@@ -33,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 group :development, :test do 
-	gem 'sqlite3'
+	gem 'sqlite3', '~>1.3.8'
 end
 group :production do 
 	gem 'pg'
