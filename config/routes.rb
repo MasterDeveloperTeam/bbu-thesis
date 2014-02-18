@@ -1,4 +1,6 @@
 DepotTest::Application.routes.draw do
+  resources :orders
+
   devise_for :admins
   devise_for :models
   devise_for :users

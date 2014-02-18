@@ -32,22 +32,29 @@
                 
               </ul>
               <ul class="nav navbar-nav navbar-right">
-              <% if admin_signed_in?%>
-                <li  class="dropdown ">
+              <% if admin_signed_in? || user_signed_in?%>
+                <li  class="dropdown "> 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   
-                  <span class="glyphicon glyphicon-user"><%= truncate(current_admin.email, :length => 3)%></span>
-                  <b class="caret"></b></a>
-                  <% end%>
+                  <% if admin_signed_in?%>
+                  <%=truncate(current_admin.email, :length => 8)%>&nbsp;<span class="glyphicon glyphicon-cog"></span>
+                  <% end -%>
+                  
+                  <% if user_signed_in?%>
+                  <%=truncate(current_user.email, :length => 8)%>&nbsp;<span class="glyphicon glyphicon-cog"></span>
+                  <% end -%>
+              <% end%>
                   <ul class="dropdown-menu">
                    <li>
-                   <%if signed_in?%>
+                   <%if admin_signed_in?%>
                    <%=link_to current_admin.email%>
-                   </li>
-                   
-                   <%end%>
-                   
                     <li><%= link_to "Logout", destroy_session_path(:admin), method: :delete , :class => "glyphicon glyphicon-log-out"%></li>
+                   <% elsif user_signed_in?%>
+                   <%=link_to current_user.email%>
+                    <li><%= link_to "Logout", destroy_session_path(:user), method: :delete , :class => "glyphicon glyphicon-log-out"%></li>
+                   </li>
+                   <%end%>
+                  
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
@@ -145,7 +152,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Ruby on Rails. <span class="text-muted">It's a mazing.</span></h2>
-          <p class="lead">This is our first project built with Ruby on Rails web development framework. More information please visit <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%>.</p>
+          <p class="lead">This is our first project built with Ruby on Rails web development framework. And we just want to announce that if everyone want to know clearly what is Ruby on Rails please visit the ruby on rails homepage <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%>.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
