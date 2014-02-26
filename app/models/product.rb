@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
 	has_many :line_items
 	belongs_to :user
-	before_destroy :ensure_not_referenced_with_any_line_items, :check_user
+	before_destroy :ensure_not_referenced_with_any_line_items
 	validates_presence_of :title, :description, :price
 	validates :price, numericality: {greather_than_or_equal_to: 0.01}
 	validates_uniqueness_of :title
@@ -21,16 +21,7 @@ class Product < ActiveRecord::Base
 		
 	end
 
-	def check_user
-		current_user = current_user.find_by(product_id: @product)
-		if current_user
-			return true 
-		else
-			errors.add(:base, notice: "you can not delete other post");
-			return false 
-		end
-		
-	end
+
 
 	
 end
