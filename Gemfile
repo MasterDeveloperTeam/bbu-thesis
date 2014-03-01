@@ -11,6 +11,8 @@ gem 'simple_form'
 gem 'sass-rails', '~> 4.0.0'
 gem "paperclip", "~> 4.1.1"
 gem "letter_opener", "~> 1.2.0"
+gem 'pdfkit'
+gem 'activemerchant'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

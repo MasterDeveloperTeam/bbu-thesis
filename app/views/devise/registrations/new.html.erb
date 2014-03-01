@@ -1,6 +1,8 @@
+
+
 <div class="container">
 <div class="form-signin">
-<h2 class="form-signin-header">Sign up</h2>
+<div class="form-signin-header"><%= image_tag("SignUP_icon.png")%></div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>

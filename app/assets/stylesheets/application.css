@@ -168,8 +168,17 @@ body {
 
 .form-signin {
   max-width: 330px;
-  padding: 15px;
+  padding: 20px;
   margin: 0 auto;
+  background: rgba(242,242,242,0.5);
+  border: 1px solid #ddd;
+}
+.form-signin-header img{
+  width: 100px;
+  height:100px;
+  padding:10px;
+  margin-left:80px;
+  opacity:0.5;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -199,4 +208,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+@media only screen and (max-width: 330px) {
+  .form-signin-header img{
+  width: 100px;
+  height:100px;
+  padding:10px;
+  margin-left:40px;
+  
+}
 }

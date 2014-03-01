@@ -1,16 +1,29 @@
 
-<h4 class="text-inverse" align="center">Your Ebook cart </h4>
-<hr>
-<ul class="cart">
-
-		<%=render(cart.line_items)%>
-	
-				<li><p class="text-primary">Total:&nbsp;<%=number_to_currency(@cart.total)%></p></li>
+				<table class="table">
+				<th>Title</th>
+				<th>Unit price</th>
+				<th>Qty</th>
+				<th></th>
+				<th></th>
+				<th>Price</th>
+				<%=render(cart.line_items)%>
+				</table>
+				<table class="table" id="cart">
+				<tr>
+				<td></td>
+				<td></td>
+				<td><h4 align="right">Total:</h4></td>
+				<td></td>
+				<td><h4 class="total-price"><%=number_to_currency(@cart.total)%></h4></td>
+				</tr>
+				<tr>
+				<td>
 				
-				<%= link_to "Empty Cart", @cart, method: :delete, confirm: "Are you sure?", :class => "btn btn-warning btn-xs"%>
-				<%= link_to "Checkout", new_order_path, :class => "btn btn-success btn-xs"%>
-
-
-
-
-</ul>
+				</td>
+				</tr>
+ 
+</table>
+ <div class="modal-footer">
+        <%= link_to "Empty Cart", @cart, method: :delete, confirm: "Are you sure?", :class => "btn btn-warning"%>
+        <%= link_to 'Checkout', @cart.paypal_url(store_url), :class => 'btn btn-primary'%>
+      </div>
