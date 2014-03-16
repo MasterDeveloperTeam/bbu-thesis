@@ -19,7 +19,14 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"><span class="text-muted">Welcome to Battambang Ebook Website!</span></h2>
+          <p class="lead">This is our first project built with Ruby on Rails web development framework. And we just want to announce that if everyone want to know clearly what is Ruby on Rails please visit the ruby on rails homepage <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%>.</p>
+        </div>
+        <div class="col-md-5">
+         <%= image_tag("header.jpg", class: "featurette-image img-responsive")%>
+      </div>
 <div class="navbar-wrapper">
       
 
@@ -109,49 +116,6 @@
     </div>
 <!-- End navbar !-->
 
- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag('2.jpg')%>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag('4.jpg')%>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag('3.jpg')%>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-
 
   <div class="container marketing">
 
@@ -166,18 +130,20 @@
 
 
       <!-- START THE FEATURETTES -->
-
+<% @first_product.each do |product|%>
       <hr class="featurette-divider">
-
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Ruby on Rails. <span class="text-muted">It's a mazing.</span></h2>
-          <p class="lead">This is our first project built with Ruby on Rails web development framework. And we just want to announce that if everyone want to know clearly what is Ruby on Rails please visit the ruby on rails homepage <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%>.</p>
+          <h2 class="featurette-heading"> <span class="text-muted"><%= product.title%></span></h2>
+          <p class="lead"><%= truncate(product.description, length: 300)%> <br><br> <%= link_to 'Find out More >>>', store_show_path(product_id: product), class: "btn btn-lg btn-success"%>
+        .</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <%= link_to image_tag(product.image_url, class: 'img-thumbnail'), store_show_path(product_id: product)%>
         </div>
+
       </div>
+      <% end %>
 
       <hr class="featurette-divider">
 
