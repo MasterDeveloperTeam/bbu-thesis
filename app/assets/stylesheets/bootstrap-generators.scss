@@ -35,10 +35,15 @@ input[type="radio"], input[type="checkbox"] {
 
 .row{
   .col-lg-4{ 
+    width:300px;
+    padding: 20px 0px 10px 0px;
+    border-radius:3px;
     img{
       width:200px;
       height:250px;
-      @include box-shadow;
+    box-shadow: 0px 8px 6px -6px black;
+     -webkit-box-shadow: 0px 8px 6px -6px black;
+    -moz-box-shadow: 0px 8px 6px -6px black;
     }
 
      strong{
@@ -137,4 +142,31 @@ table.table{
   -moz-background-size:cover;
   -webkit-background-size:cover;
    background-size: cover;
+}
+.shadow{
+  @include box-shadow;
+}
+.col-md-5{
+  img{
+    &:hover{
+      @include outline-color(.4S);
+      outline-style: solid;
+    outline-width: 10px;
+    outline-color: #E7E7E7;
+    cursor: pointer;
+    }
+
+  }
+}
+.jumbotron{
+  background-color: #fff;
+  img{
+    &:hover{
+        @include outline-color(.4S);
+      outline-style: solid;
+    outline-width: 10px;
+    outline-color: #E7E7E7;
+    cursor: pointer;
+    }
+  }
 }

@@ -15,7 +15,7 @@ gem 'pdfkit'
 gem 'activemerchant'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
+gem 'compass'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'will_paginate', '~> 3.0.5'
@@ -24,7 +24,6 @@ gem 'will_paginate', '~> 3.0.5'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'devise'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
