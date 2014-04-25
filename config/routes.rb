@@ -1,8 +1,6 @@
 DepotTest::Application.routes.draw do
   get "payment_notifications/create"
   resources :payment_notifications
-  resources :orders
-
   devise_for :admins
   devise_for :models
   devise_for :users
