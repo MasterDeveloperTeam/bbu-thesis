@@ -27,7 +27,8 @@ class ProductsController < ApplicationController
   def create
 
     @product = Product.create(product_params)
-   
+    @product.pdf = params[:product][:pdf]
+    @product.save
     respond_to do |format|
       if @product.save
         format.js

@@ -7,6 +7,7 @@ gem 'devise'
 gem 'better_errors'
 gem 'bootstrap-generators'
 gem 'simple_form'
+gem 'paperclip', '~> 4.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem "paperclip", "~> 4.1.1"

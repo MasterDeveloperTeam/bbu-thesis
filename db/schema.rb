@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425034018) do
+ActiveRecord::Schema.define(version: 20140426003013) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -83,11 +83,15 @@ ActiveRecord::Schema.define(version: 20140425034018) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",            precision: 8, scale: 2
     t.integer  "user_log_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

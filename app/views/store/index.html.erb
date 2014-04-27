@@ -8,11 +8,7 @@
         <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Your cart</h4>
       </div>
       <div class="modal-body " id="cart">
-                 
-                 
-                        <%= render @cart%>
-                
-                  
+             <%= render @cart%>
       </div>
      
     </div><!-- /.modal-content -->
@@ -127,24 +123,6 @@
 	  </div><!-- /.row -->
 
       </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-<% @first_product.each do |product|%>
-      <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading"> <span class="text-muted"><%= product.title%></span></h2>
-          <p class="lead"><%= truncate(product.description, length: 300)%> <br><br> <%= link_to 'Find out More >>>', store_show_path(product_id: product), class: "btn btn-lg btn-success"%>
-        .</p>
-        </div>
-        <div class="col-md-5">
-          <%= link_to image_tag(product.image_url, class: 'img-thumbnail'), store_show_path(product_id: product)%>
-        </div>
-
-      </div>
-      <% end %>
-
       <hr class="featurette-divider">
 
       <div class="row featurette">
