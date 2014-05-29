@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426003013) do
+ActiveRecord::Schema.define(version: 20140427011500) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(version: 20140426003013) do
     t.datetime "updated_at"
     t.datetime "purchased_at"
   end
+
+  create_table "free_ebooks", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "status",             default: "Free"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "free_ebooks", ["user_id"], name: "index_free_ebooks_on_user_id"
 
   create_table "line_items", force: true do |t|
     t.integer  "cart_id"

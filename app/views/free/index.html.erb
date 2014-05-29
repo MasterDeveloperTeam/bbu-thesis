@@ -1,24 +1,9 @@
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Your cart</h4>
-      </div>
-      <div class="modal-body " id="cart">
-             <%= render @cart%>
-      </div>
-     
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-      <div class="row featurette">
+<div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading"><span class="text-muted">Welcome to Technology and Accounting Center(TAC)</span></h2>
-          <p class="lead">This is our first project built with Ruby on Rails web development framework. And we just want to announce that if everyone want to know clearly what is Ruby on Rails please visit the ruby on rails homepage <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%> or contact us through Tel: 097 6005660</p>
+          <h2 class="featurette-heading"><span class="text-muted">Free Ebooks download here!</span></h2>
+          <p class="lead">Note: You need to sign up for being able to download ebooks. Click button below to register.</p>
+         <%= link_to "Register Here!", '', class: "btn btn-primary btn-lg" %>
         </div>
         <div class="col-md-5">
          <%= image_tag("header.jpg", class: "featurette-image img-responsive")%>
@@ -35,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">TAC</a>
+              <a class="navbar-brand" href="#">Ebookie</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -79,7 +64,6 @@
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete%></li>
                     <li><%= link_to 'Create Product', new_product_path%></li>
-                    <li><%= link_to 'Create FreeBooks', new_free_ebook_path%></li>
                     <li><%= link_to 'List products', products_path %></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Customer info</li>
@@ -87,7 +71,6 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-
                 </ul>
 
                 
@@ -96,8 +79,8 @@
               <ul class="nav navbar-nav navbar-right">
                 <li  class="dropdown " data-toggle="tooltip" title="Click to see cart info">
                   <a href="#" data-toggle="modal" data-target="#myModal">
-                  <span class="glyphicon glyphicon-shopping-cart cart-text" id="cart" ><%= render "layouts/total_price"%></span>
-                  <b class="caret"></b></a>
+          
+
                   <ul class="dropdown-menu">
                    
                    
@@ -106,7 +89,6 @@
                     <li><a href="#">---------------------------------------------------</a></li>
                   </ul>
                 </li>
-                <li><%=link_to 'Register | Login', new_user_registration_path%></li>
               </ul>
                 
             </div>
@@ -120,8 +102,23 @@
 
       <!-- Three columns of text below the carousel -->
 
-    <div id="products" class="row">
-    <%= render "products"%>
+    <div id="book" class="row">
+
+<%@free_books.each do |book|%>
+        <div class="col-lg-4">
+      <%= link_to image_tag(book.photo.url, :class => 'img-thumbnail'), ''%>
+          <h4><%=book.title%></h4>
+          <p><%=truncate(book.description, length: 120)%></p>
+          <br>
+          <strong>&nbsp;<%=book.status%></strong>
+          <br><br>
+              &nbsp;&nbsp;&nbsp; <%=link_to 'Download', '', :class => "btn btn-default btn-xs"%>
+        </div><!-- /.col-lg-4 -->
+
+        <% end %>
+      <div class="col-lg-12 pull-right">
+
+</div>
      
 	  </div><!-- /.row -->
 
@@ -156,7 +153,9 @@
 
 
       <!-- FOOTER -->
-    
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
 
     </div><!-- /.container -->
-

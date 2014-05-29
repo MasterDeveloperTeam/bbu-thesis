@@ -37,7 +37,9 @@ input[type="radio"], input[type="checkbox"] {
   .col-lg-4{ 
     width:300px;
     padding: 20px 0px 10px 0px;
-    border-radius:3px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin-right: 10px;
     img{
       width:200px;
       height:250px;
@@ -101,7 +103,7 @@ ul.cart {
     @include outline-color(.3s);   
     outline-style: solid;
     outline-width: 10px;
-    outline-color: #E7E7E7;
+    outline-color: rgb(240,163,10);
     cursor: pointer;
     
     }
