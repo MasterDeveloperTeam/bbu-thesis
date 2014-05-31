@@ -1,0 +1,83 @@
+<%= render 'layouts/navigation'%>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<div class="container">
+	<div class="row well">
+		<div class="col-md-2">
+    	    <ul class="nav nav-pills nav-stacked well">
+              <li class="active"><%=link_to "Home", user_profile_url, class: 'fa fa-home'%></li>
+              <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :Delete, confirm: "Are you sure?", class: 'fa fa-sign-out'%></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+                <div class="panel">
+                    <img class="pic img-circle" src="http://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/twDq00QDud4/s120-c/photo.jpg" alt="...">
+                    <div class="name"><small><%= current_user.email%></small></div>
+                    <a href="#" class="btn btn-xs btn-primary pull-right" style="margin:10px;"><span class="glyphicon glyphicon-picture"></span> Change cover</a>
+                </div>
+                
+    <br><br><br>
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#inbox" data-toggle="tab"><i class="fa fa-envelope-o"></i> Books</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      <div class="tab-pane active" id="inbox">
+        <a type="button" data-toggle="collapse" data-target="#a1">
+            <div class="btn-toolbar well well-sm" role="toolbar"  style="margin:0px;">
+              <div class="btn-group col-md-3">Admin Kumar</div>
+              <div class="btn-group col-md-8"><b>Hi Check this new Bootstrap plugin</b> <div class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:10 PM <button class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-share-square-o"> Reply</i></button></div> </div>
+            </div>
+        </a>
+        <div id="a1" class="collapse out well">This is the message body1</div>
+        <br>
+      </div>      
+    </div>
+
+     </div>
+	</div>
+    
+    
+</div>
+
+
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content"><br/><br/>
+            <form class="form-horizontal">
+            <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="body">Body :</label>  
+              <div class="col-md-8">
+              <input id="body" name="body" type="text" placeholder="Message Body" class="form-control input-md">
+                
+              </div>
+            </div>
+            
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="message">Message :</label>
+              <div class="col-md-8">                     
+                <textarea class="form-control" id="message" name="message"></textarea>
+              </div>
+            </div>
+            
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="send"></label>
+              <div class="col-md-8">
+                <button id="send" name="send" class="btn btn-primary">Send</button>
+              </div>
+            </div>
+            
+            </fieldset>
+            </form>
+
+    </div>
+  </div>
+</div>
+
+<hr>

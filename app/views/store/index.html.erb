@@ -1,4 +1,4 @@
-
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -14,15 +14,59 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      
+        <div class="item active">
+          <%= image_tag('pic1-banner.jpg')%>
+           <div class="carousel-caption">
+            <h3>Technology and Accounting Center(TAC)</h3>
+          <p></p>
+          </div>
+        </div><!-- End Item -->
+ 
+         <div class="item">
+          <img src="http://placehold.it/1200x400/999999/cccccc">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="http://placehold.it/1200x400/dddddd/333333">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="http://placehold.it/1200x400/999999/cccccc">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div><!-- End Item -->
+                
+      </div><!-- End Carousel Inner -->
+
+
+      <ul class="nav nav-pills nav-justified">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>our School</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum dolor sit</small></a></li>
+        </ul>
+
+
+    </div><!-- End Carousel -->
+</div>
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading"><span class="text-muted">Welcome to Technology and Accounting Center(TAC)</span></h2>
-          <p class="lead">This is our first project built with Ruby on Rails web development framework. And we just want to announce that if everyone want to know clearly what is Ruby on Rails please visit the ruby on rails homepage <%=link_to 'Rails Khmer', "http://www.railskhmer.us", :target => "blank"%> or contact us through Tel: 097 6005660</p>
-        </div>
-        <div class="col-md-5">
-         <%= image_tag("header.jpg", class: "featurette-image img-responsive")%>
-      </div>
 <div class="navbar-wrapper">
       
 
@@ -39,9 +83,18 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><%=link_to 'Home', store_url%></li>
-                <li><%= link_to "Pro EBooks", store_url%></li>
-                <li><%= link_to "Free Ebooks", free_index_path%></li>
+                <li class="active"><%=link_to store_url do %>
+                <i class="fa fa-home"></i> Home
+                <% end %>
+                </li>
+                <li><%= link_to store_url do %>
+                    <i class="fa fa-book"></i> Pro Ebook
+                    <% end %>
+                </li>
+                <li><%= link_to free_index_path do %>
+                   <i class="fa fa-book"></i> Free Ebook
+                    <% end %>
+                </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -62,8 +115,8 @@
                   <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= truncate(current_user.email, :length => 8)%> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
+                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete%></li>
+                    <li><%= link_to 'User Home', user_profile_url%></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
@@ -87,7 +140,6 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-
                 </ul>
 
                 
@@ -106,7 +158,17 @@
                     <li><a href="#">---------------------------------------------------</a></li>
                   </ul>
                 </li>
-                <li><%=link_to 'Register | Login', new_user_registration_path%></li>
+                <li><%= link_to user_profile_url do %>
+                <i class="fa fa-download"></i> My Ebook
+                <% end %>
+                </li>
+                <% if !signed_in?%>
+                <li><%= link_to 'Register', new_user_registration_path%></li>
+                <li><%= link_to new_user_session_path do %>
+                <i class="fa-sign-in"></i> Login
+                <% end %>
+                </li>
+                <%end%>
               </ul>
                 
             </div>
@@ -117,7 +179,16 @@
 
 
   <div class="container marketing">
-
+ <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+     <hr class="featurette-divider">
       <!-- Three columns of text below the carousel -->
 
     <div id="products" class="row">
@@ -156,7 +227,57 @@
 
 
       <!-- FOOTER -->
-    
+     
 
     </div><!-- /.container -->
 
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="col-md-3">
+              <ul class="list-unstyled">
+                  <li>Github</li>
+                  <li><a href="#">About Us</a></li>
+                   <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact & Support</a></li>
+                     <li><a href="#">Enterprise</a></li>
+                      <li><a href="#">Site Status</a></li>
+              </ul>
+          </div>
+           <div class="col-md-3">
+              <ul class="list-unstyled">
+                  <li>Github</li>
+                  <li><a href="#">About Us</a></li>
+                   <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact & Support</a></li>
+                     <li><a href="#">Enterprise</a></li>
+                      <li><a href="#">Site Status</a></li>
+              </ul>
+          </div>
+           <div class="col-md-3">
+              <ul class="list-unstyled">
+                  <li>Github</li>
+                  <li><a href="#">About Us</a></li>
+                   <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact & Support</a></li>
+                     <li><a href="#">Enterprise</a></li>
+                      <li><a href="#">Site Status</a></li>
+              </ul>
+          </div>
+           <div class="col-md-3">
+              <ul class="list-unstyled">
+                  <li>Github</li>
+                  <li><a href="#">About Us</a></li>
+                   <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact & Support</a></li>
+                     <li><a href="#">Enterprise</a></li>
+                      <li><a href="#">Site Status</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Tac, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+  </div>

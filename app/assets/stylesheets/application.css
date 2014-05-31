@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_self
  *= require_tree .
  */
@@ -219,3 +220,153 @@ body {
   
 }
 }
+@font-face {
+  font-family: "FontAwesome";
+  src: url('<%= asset_path("fontawesome-webfont.eot") %>');
+  src: url('<%= asset_path("fontawesome-webfont.eot") + "?#iefix" %>') format('eot'), url('<%= asset_path("fontawesome-webfont.woff") %>') format('woff'), url('<%= asset_path("fontawesome-webfont.ttf") %>') format('truetype'), url('<%= asset_path("fontawesome-webfont.svg") + "#FontAwesome" %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body { padding-top: 20px; }
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+  background:#eee;
+}
+#myCarousel .nav a {
+    border-radius:0px;
+}
+/*  cart style */
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
+}
+
+    button {
+        overflow: visible;
+        width: auto;
+    }
+    button.link {
+        font-family: "Verdana" sans-serif;
+        font-size: 1em;
+        text-align: left;
+        color: blue;
+        background: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+       
+        -moz-user-select: text;
+     
+        /* override all your button styles here if there are any others */
+    }
+    button.link span {
+        text-decoration: underline;
+    }
+    button.link:hover span,
+    button.link:focus span {
+        color: black;
+    }
+

@@ -1,4 +1,8 @@
-DepotTest::Application.routes.draw do
+DepotTest::Application.routes.draw do 
+
+    get "user_profile/index", :as => 'user_profile'
+
+
   get "free/index"
 
   resources :free_ebooks
