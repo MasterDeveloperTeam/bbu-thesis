@@ -1,5 +1,7 @@
 DepotTest::Application.routes.draw do 
 
+  resources :orders
+
     get "user_profile/index", :as => 'user_profile'
 
 

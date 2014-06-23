@@ -20,5 +20,8 @@
 </table>
  <div class="modal-footer">
         <%= link_to "Empty Cart", @cart, method: :delete, confirm: "Are you sure?", :class => "btn btn-warning"%>
-        <%= link_to image_tag("paypal-button.png"), @cart.paypal_url(store_url, payment_notifications_url)%>
+       <!-- <%= link_to image_tag("paypal-button.png"), @cart.paypal_url(store_url, payment_notifications_url)%>!-->
+       <%= link_to "CheckOut", new_order_path%>
+
       </div>
+s

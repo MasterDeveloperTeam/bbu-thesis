@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcb59997-c1dc-4cd6-8348-a41d763865bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carts/_cart.html.erb" afterPath="$PROJECT_DIR$/app/views/carts/_cart.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/store/index.html.erb" afterPath="$PROJECT_DIR$/app/views/store/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/store_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/store_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cart.rb" afterPath="$PROJECT_DIR$/app/models/cart.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/depot_test.iml" afterPath="$PROJECT_DIR$/.idea/depot_test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_profile/index.html.erb" afterPath="$PROJECT_DIR$/app/views/user_profile/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/line_item.rb" afterPath="$PROJECT_DIR$/app/models/line_item.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user_profile_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/user_profile_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="depot_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +48,7 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+            <state line="9" column="0" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="440">
               <folding />
             </state>
           </provider>
@@ -52,52 +61,107 @@
               <ID>RailsDependency</ID>
               <OriginalElement>#depot_test</OriginalElement>
               <nodes>
-                <node x="0.0" y="29.125">User</node>
-                <node x="474.0" y="875.125">FreeEbook</node>
-                <node x="0.0" y="875.125">Model</node>
-                <node x="1042.0" y="229.0">LineItem</node>
-                <node x="654.0" y="0.0">Product</node>
-                <node x="0.0" y="523.125">Admin</node>
-                <node x="710.0" y="257.75">PaymentNotification</node>
-                <node x="173.0" y="377.125">Cart</node>
+                <node x="887.0" y="439.0">Order</node>
+                <node x="0.0" y="126.41893939393941">User</node>
+                <node x="526.5" y="0.0">FreeEbook</node>
+                <node x="514.0" y="631.0">Model</node>
+                <node x="831.0" y="38.0">Product</node>
+                <node x="1219.0" y="364.31666666666666">LineItem</node>
+                <node x="0.0" y="631.0">Admin</node>
+                <node x="887.0" y="271.0">PaymentNotification</node>
+                <node x="483.0" y="355.0">Cart</node>
               </nodes>
               <notes />
               <edges>
-                <edge source="User" target="PaymentNotification">
-                  <point x="287.0" y="77.0" />
-                  <point x="654.0" y="294.5" />
+                <edge source="User" target="Order">
+                  <point x="201.5" y="150.79999999999995" />
+                  <point x="483.0" y="549.25" />
+                  <point x="-98.0" y="36.75" />
+                </edge>
+                <edge source="Cart" target="Order">
+                  <point x="134.0" y="49.0" />
                   <point x="-98.0" y="-36.75" />
                 </edge>
+                <edge source="User" target="Cart">
+                  <point x="201.50000000000003" y="75.39999999999998" />
+                  <point x="-134.0" y="-0.0" />
+                </edge>
+                <edge source="User" target="PaymentNotification">
+                  <point x="201.5" y="-0.0" />
+                  <point x="483.0" y="307.75" />
+                  <point x="-98.0" y="-36.75" />
+                </edge>
+                <edge source="Order" target="LineItem">
+                  <point x="98.0" y="-0.0" />
+                  <point x="1139.0" y="512.5" />
+                  <point x="-88.0" y="41.333333333333314" />
+                </edge>
                 <edge source="Cart" target="LineItem">
-                  <point x="114.0" y="25.25" />
-                  <point x="574.0" y="452.875" />
-                  <point x="654.0" y="451.25" />
-                  <point x="962.0" y="451.25" />
-                  <point x="-78.0" y="25.25" />
+                  <point x="134.0" y="-0.0" />
+                  <point x="1139.0" y="428.5" />
+                  <point x="-88.0" y="-0.0" />
                 </edge>
                 <edge source="Cart" target="PaymentNotification">
-                  <point x="114.0" y="-25.25" />
-                  <point x="574.0" y="402.375" />
-                  <point x="654.0" y="368.0" />
+                  <point x="134.0" y="-49.0" />
                   <point x="-98.0" y="36.75" />
                 </edge>
                 <edge source="Product" target="LineItem">
                   <point x="154.0" y="-0.0" />
-                  <point x="-78.0" y="-25.25" />
+                  <point x="-88.0" y="-41.33333333333337" />
                 </edge>
                 <edge source="User" target="Product">
-                  <point x="287.0" y="-77.0" />
+                  <point x="201.5" y="-75.4" />
+                  <point x="483.0" y="134.5" />
                   <point x="-154.0" y="-0.0" />
                 </edge>
+                <edge source="User" target="FreeEbook">
+                  <point x="201.50000000000003" y="-150.8" />
+                  <point x="483.0" y="62.0" />
+                  <point x="-90.5" y="-0.0" />
+                </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="0.5254969749351772" x="599.7146381578947" y="222.9991776315789" />
-              <SelectedNodes>
-                <node>PaymentNotification</node>
-              </SelectedNodes>
+              <settings layout="Hierarchic Group" zoom="0.5417536534446764" x="697.5" y="469.0" />
+              <SelectedNodes />
               <Categories>
-                <Category>Association fields</Category>
                 <Category>Migration fields</Category>
+                <Category>Association fields</Category>
               </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="free_ebook.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/free_ebook.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line_item.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/line_item.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="19" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="286">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/order.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="352">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="23" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="462">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,6 +181,9 @@
       <list>
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/order.rb" />
+        <option value="$PROJECT_DIR$/app/models/line_item.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
       </list>
     </option>
   </component>
@@ -124,7 +191,7 @@
     <option name="x" value="-1" />
     <option name="y" value="27" />
     <option name="width" value="1368" />
-    <option name="height" value="742" />
+    <option name="height" value="680" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -152,8 +219,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,12 +265,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="depot_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="depot_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,18 +451,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="27" width="1368" height="680" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19924243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20530303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3380531" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -406,6 +491,206 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://RailsDependency/#depot_test">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>RailsDependency</ID>
+          <OriginalElement>#depot_test</OriginalElement>
+          <nodes>
+            <node x="887.0" y="439.0">Order</node>
+            <node x="0.0" y="126.41893939393941">User</node>
+            <node x="526.5" y="0.0">FreeEbook</node>
+            <node x="514.0" y="631.0">Model</node>
+            <node x="831.0" y="38.0">Product</node>
+            <node x="1219.0" y="364.31666666666666">LineItem</node>
+            <node x="0.0" y="631.0">Admin</node>
+            <node x="887.0" y="271.0">PaymentNotification</node>
+            <node x="483.0" y="355.0">Cart</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="User" target="Order">
+              <point x="201.5" y="150.79999999999995" />
+              <point x="483.0" y="549.25" />
+              <point x="-98.0" y="36.75" />
+            </edge>
+            <edge source="Cart" target="Order">
+              <point x="134.0" y="49.0" />
+              <point x="-98.0" y="-36.75" />
+            </edge>
+            <edge source="User" target="Cart">
+              <point x="201.50000000000003" y="75.39999999999998" />
+              <point x="-134.0" y="-0.0" />
+            </edge>
+            <edge source="User" target="PaymentNotification">
+              <point x="201.5" y="-0.0" />
+              <point x="483.0" y="307.75" />
+              <point x="-98.0" y="-36.75" />
+            </edge>
+            <edge source="Order" target="LineItem">
+              <point x="98.0" y="-0.0" />
+              <point x="1139.0" y="512.5" />
+              <point x="-88.0" y="41.333333333333314" />
+            </edge>
+            <edge source="Cart" target="LineItem">
+              <point x="134.0" y="-0.0" />
+              <point x="1139.0" y="428.5" />
+              <point x="-88.0" y="-0.0" />
+            </edge>
+            <edge source="Cart" target="PaymentNotification">
+              <point x="134.0" y="-49.0" />
+              <point x="-98.0" y="36.75" />
+            </edge>
+            <edge source="Product" target="LineItem">
+              <point x="154.0" y="-0.0" />
+              <point x="-88.0" y="-41.33333333333337" />
+            </edge>
+            <edge source="User" target="Product">
+              <point x="201.5" y="-75.4" />
+              <point x="483.0" y="134.5" />
+              <point x="-154.0" y="-0.0" />
+            </edge>
+            <edge source="User" target="FreeEbook">
+              <point x="201.50000000000003" y="-150.8" />
+              <point x="483.0" y="62.0" />
+              <point x="-90.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5417536534446764" x="697.5" y="469.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Migration fields</Category>
+            <Category>Association fields</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/free_ebook.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/line_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/order.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="46" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="902" max-vertical-offset="1298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://RailsDependency/#depot_test">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>RailsDependency</ID>
+          <OriginalElement>#depot_test</OriginalElement>
+          <nodes>
+            <node x="495.9999999999999" y="-215.45238095238096">Order</node>
+            <node x="50.57142857142861" y="91.40476190476198">User</node>
+            <node x="771.9999999999999" y="426.4761904761905">FreeEbook</node>
+            <node x="154.00000000000017" y="737.904761904762">Model</node>
+            <node x="650.2857142857143" y="31.33333333333337">Product</node>
+            <node x="951.1428571428571" y="-263.05357142857133">LineItem</node>
+            <node x="665.7142857142857" y="703.6190476190476">Admin</node>
+            <node x="187.71428571428572" y="-242.33928571428572">PaymentNotification</node>
+            <node x="463.2857142857143" y="-417.1428571428571">Cart</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="User" target="Order">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="User" target="PaymentNotification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Order" target="LineItem">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Cart" target="LineItem">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Cart" target="PaymentNotification">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Product" target="LineItem">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="User" target="Product">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="User" target="FreeEbook">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="704.0" y="-34.0" />
+          <SelectedNodes>
+            <node>User</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Migration fields</Category>
+            <Category>Association fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="18" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="0" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1276">
@@ -492,7 +777,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+        <state line="9" column="0" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/order.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/line_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/free_ebook.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="23" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="462">
           <folding />
         </state>
       </provider>
@@ -503,51 +816,70 @@
           <ID>RailsDependency</ID>
           <OriginalElement>#depot_test</OriginalElement>
           <nodes>
-            <node x="0.0" y="29.125">User</node>
-            <node x="474.0" y="875.125">FreeEbook</node>
-            <node x="0.0" y="875.125">Model</node>
-            <node x="1042.0" y="229.0">LineItem</node>
-            <node x="654.0" y="0.0">Product</node>
-            <node x="0.0" y="523.125">Admin</node>
-            <node x="710.0" y="257.75">PaymentNotification</node>
-            <node x="173.0" y="377.125">Cart</node>
+            <node x="887.0" y="439.0">Order</node>
+            <node x="0.0" y="126.41893939393941">User</node>
+            <node x="526.5" y="0.0">FreeEbook</node>
+            <node x="514.0" y="631.0">Model</node>
+            <node x="831.0" y="38.0">Product</node>
+            <node x="1219.0" y="364.31666666666666">LineItem</node>
+            <node x="0.0" y="631.0">Admin</node>
+            <node x="887.0" y="271.0">PaymentNotification</node>
+            <node x="483.0" y="355.0">Cart</node>
           </nodes>
           <notes />
           <edges>
-            <edge source="User" target="PaymentNotification">
-              <point x="287.0" y="77.0" />
-              <point x="654.0" y="294.5" />
+            <edge source="User" target="Order">
+              <point x="201.5" y="150.79999999999995" />
+              <point x="483.0" y="549.25" />
+              <point x="-98.0" y="36.75" />
+            </edge>
+            <edge source="Cart" target="Order">
+              <point x="134.0" y="49.0" />
               <point x="-98.0" y="-36.75" />
             </edge>
+            <edge source="User" target="Cart">
+              <point x="201.50000000000003" y="75.39999999999998" />
+              <point x="-134.0" y="-0.0" />
+            </edge>
+            <edge source="User" target="PaymentNotification">
+              <point x="201.5" y="-0.0" />
+              <point x="483.0" y="307.75" />
+              <point x="-98.0" y="-36.75" />
+            </edge>
+            <edge source="Order" target="LineItem">
+              <point x="98.0" y="-0.0" />
+              <point x="1139.0" y="512.5" />
+              <point x="-88.0" y="41.333333333333314" />
+            </edge>
             <edge source="Cart" target="LineItem">
-              <point x="114.0" y="25.25" />
-              <point x="574.0" y="452.875" />
-              <point x="654.0" y="451.25" />
-              <point x="962.0" y="451.25" />
-              <point x="-78.0" y="25.25" />
+              <point x="134.0" y="-0.0" />
+              <point x="1139.0" y="428.5" />
+              <point x="-88.0" y="-0.0" />
             </edge>
             <edge source="Cart" target="PaymentNotification">
-              <point x="114.0" y="-25.25" />
-              <point x="574.0" y="402.375" />
-              <point x="654.0" y="368.0" />
+              <point x="134.0" y="-49.0" />
               <point x="-98.0" y="36.75" />
             </edge>
             <edge source="Product" target="LineItem">
               <point x="154.0" y="-0.0" />
-              <point x="-78.0" y="-25.25" />
+              <point x="-88.0" y="-41.33333333333337" />
             </edge>
             <edge source="User" target="Product">
-              <point x="287.0" y="-77.0" />
+              <point x="201.5" y="-75.4" />
+              <point x="483.0" y="134.5" />
               <point x="-154.0" y="-0.0" />
             </edge>
+            <edge source="User" target="FreeEbook">
+              <point x="201.50000000000003" y="-150.8" />
+              <point x="483.0" y="62.0" />
+              <point x="-90.5" y="-0.0" />
+            </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.5254969749351772" x="599.7146381578947" y="222.9991776315789" />
-          <SelectedNodes>
-            <node>PaymentNotification</node>
-          </SelectedNodes>
+          <settings layout="Hierarchic Group" zoom="0.5417536534446764" x="697.5" y="469.0" />
+          <SelectedNodes />
           <Categories>
-            <Category>Association fields</Category>
             <Category>Migration fields</Category>
+            <Category>Association fields</Category>
           </Categories>
         </state>
       </provider>
