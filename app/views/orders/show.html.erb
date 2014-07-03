@@ -1,24 +1,73 @@
-<div class="page-header">
-  <%= link_to orders_path, :class => 'btn btn-default' do %>
+<div class="container">
+    <div class="row">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>Tac School</strong>
+                        <br>
+                        Road N3 Svaypor
+                        <br>
+                        Battambang city
+                        <br>
+                        <abbr title="Phone">P:</abbr> (088) 665-5156
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                    <p>
+                        <em><%= Time.now.strftime("%B %d, %Y, %A")%></em>
+                    </p>
+                    <p>
+                        <em><%= Time.now.strftime("%H:%M:%S")%></em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <h1>Order summary</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>#</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% @cart.line_items.each do |item|%>
+                        <tr>
+                            <td class="col-md-9"><em><%= item.product.title%></em></h4></td>
+                            <td class="col-md-1" style="text-align: center"><%=item.quantity%></td>
+                            <td class="col-md-1 text-center"><%= number_to_currency(item.product.price)%></td>
+                            <td class="col-md-1 text-center"><%= number_to_currency(item.total_price)%></td>
+                        </tr>
+                        <%end%>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                            <td class="text-center text-danger"><h4><strong><%= number_to_currency(@cart.total)%></strong></h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <%=link_to  @cart.paypal_url(store_url, payment_notifications_url),class:"btn btn-success btn-lg btn-block" do %>
+                Paynow
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  
+                  <%end%>
+            </div>
+        </div>
+    </div>
+<div class="col-xs-6 col-sm-5 pull-right">
+  <%= link_to store_url, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+    Exit
   <% end %>
   <%= link_to edit_order_path(@order), :class => 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-  <h1>Show order</h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt>Name:</dt>
-  <dd><%= @order.name %></dd>
-
-  <dt>Address:</dt>
-  <dd><%= @order.address %></dd>
-
-  <dt>User:</dt>
-  <dd><%= @order.user.email %></dd>
-
-</dl>
-Process to Paypal : <%= link_to image_tag("paypal-button.png"), @cart.paypal_url(store_url, payment_notifications_url)%>
+    Back
+  <%end%>
+  </div>

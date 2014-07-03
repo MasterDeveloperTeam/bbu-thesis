@@ -17,69 +17,41 @@
                 </div>
                 
     <br><br><br>
-    <ul class="nav nav-tabs" id="myTab">
-      <li class="active"><a href="#inbox" data-toggle="tab"><i class="fa fa-envelope-o"></i> Books</a></li>
-    </ul>
-    
-    <div class="tab-content">
-      <div class="tab-pane active" id="inbox">
-        <a type="button" data-toggle="collapse" data-target="#a1">
-            <div class="btn-toolbar well well-sm" role="toolbar"  style="margin:0px;">
-              <div class="btn-group col-md-3">Admin Kumar</div>
-              <div class="btn-group col-md-8"><b>Hi Check this new Bootstrap plugin</b> <div class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:10 PM <button class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-share-square-o"> Reply</i></button></div> </div>
-            </div>
-        </a>
-        <div id="a1" class="collapse out well">This is the message body1</div>
-        <br>
-      </div>      
-    </div>
-
-     </div>
-	</div>
-    
-    
-</div>
-
-
-
-
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content"><br/><br/>
-            <form class="form-horizontal">
-            <fieldset>
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-2 control-label" for="body">Body :</label>  
-              <div class="col-md-8">
-              <input id="body" name="body" type="text" placeholder="Message Body" class="form-control input-md">
-                
-              </div>
-            </div>
-            
-            <!-- Textarea -->
-            <div class="form-group">
-              <label class="col-md-2 control-label" for="message">Message :</label>
-              <div class="col-md-8">                     
-                <textarea class="form-control" id="message" name="message"></textarea>
-              </div>
-            </div>
-            
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-2 control-label" for="send"></label>
-              <div class="col-md-8">
-                <button id="send" name="send" class="btn btn-primary">Send</button>
-              </div>
-            </div>
-            
-            </fieldset>
-            </form>
-
+  
     </div>
   </div>
 </div>
 
 <hr>
-<%=@users%>
+<%@user.orders.each do |order|%>
+<% if order.purchased_at?%>
+  <%order.line_items.each do |item|%>
 
+  <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <%= image_tag(item.product.image_url, :class => 'img-thumbnail')%>
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-6">
+                                            <h5>
+                                                <%=item.product.title%></h5>
+                                            <h5 class="price-text-color">
+                                                <%= number_to_currency(item.product.price)%></h5>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-6">
+                                         
+                                        &nbsp;&nbsp;&nbsp; <%=link_to 'Download', item.product.pdf.url, :class => "btn btn-default btn-xs"%>
+                                         
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                  <%end%>
+                  <%end%>
+<%end%>

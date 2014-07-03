@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609032006) do
+ActiveRecord::Schema.define(version: 20140703021411) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -86,22 +86,13 @@ ActiveRecord::Schema.define(version: 20140609032006) do
   add_index "models", ["email"], name: "index_models_on_email", unique: true
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
 
-  create_table "names", force: true do |t|
-    t.text     "address"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "names", ["user_id"], name: "index_names_on_user_id"
-
   create_table "orders", force: true do |t|
     t.string   "name"
     t.text     "address"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cart_id"
+    t.datetime "purchased_at"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
@@ -114,6 +105,7 @@ ActiveRecord::Schema.define(version: 20140609032006) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "order_id"
   end
 
   add_index "payment_notifications", ["cart_id"], name: "index_payment_notifications_on_cart_id"
