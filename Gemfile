@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'devise'
 # Use sqlite3 as the database for Active Record
 gem 'better_errors'
+gem 'designmodo-flatuipro-rails'
 gem 'bootstrap-generators'
 gem 'simple_form'
 gem 'paperclip', '~> 4.1.1'

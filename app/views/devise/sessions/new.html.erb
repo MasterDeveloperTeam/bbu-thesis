@@ -1,30 +1,43 @@
+<div class="mar-t">
 
-<div class="container">
-	<div class="form-signin">
-		<h2 class="form-signin-header">Sign in</h2>
-
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
+      </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4 border">
+            <div class="account-box">
+                <div class="logo ">
+                    <h3>TAC</h3>
+                </div>
+             <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                <div class="form-group">
 		  <%= f.email_field :email, :autofocus => true, :class => "form-control", :placeholder => "Email Address" %>
-		 
-		  <%= f.password_field :password, :class => "form-control" , :placeholder => "password"%>
-		  
-		  <% if devise_mapping.rememberable? -%>
+                </div>
+                <div class="form-group">
+                     <%= f.password_field :password, :class => "form-control" , :placeholder => "password"%>
+                </div>
+                <label class="checkbox">
+                     <% if devise_mapping.rememberable? -%>
 		    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
 		  <% end -%>
-		 
-
-			
-		  <%= f.submit "Sign in", :class => "btn btn-lg btn-primary btn-block"%>
-		  <%= render "devise/shared/links" %>
-		  <br>
-		  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  
+                </label>
+                <%= f.submit "Sign in", :class => "btn  btn-primary btn-block"%>
+                
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %><br>
  	 	<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
 		<% end -%>
-		<% end %>
-
-	</div>
+           
+                <div class="or-box row-block">
+                    <div class="row">
+                        <div class="col-md-12 row-block">
+                            <%= render "devise/shared/links" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    	<% end %>
+	
 	
 </div>
 
-<hr>
