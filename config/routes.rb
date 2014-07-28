@@ -7,8 +7,6 @@ DepotTest::Application.routes.draw do
 
   get "free/index"
 
-  resources :free_ebooks
-
   get "payment_notifications/create"
   resources :payment_notifications
   devise_for :admins
