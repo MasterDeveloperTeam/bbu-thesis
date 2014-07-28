@@ -6,7 +6,8 @@
                 <div class="logo ">
                     <h3>TAC</h3>
                 </div>
-             <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+             <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
                 <div class="form-group">
 		  <%= f.email_field :email, :autofocus => true, :class => "form-control", :placeholder => "Email Address" %>
                 </div>
