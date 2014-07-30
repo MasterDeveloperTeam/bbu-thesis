@@ -294,5 +294,6 @@ body { padding-top: 20px; }
     margin-right: 10px;
 }
 
-  
-
+ li > a{
+    list-style:none;
+  }

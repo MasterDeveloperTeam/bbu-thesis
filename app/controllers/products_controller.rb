@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
-
+  before_action :authenticate_admin_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!, :unless => proc {|c| c.devise_controller?}
   # GET /products
   # GET /products.json
   def index

@@ -13,8 +13,7 @@ gem 'simple_form'
 gem 'paperclip', '~> 4.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem "paperclip", "~> 4.1.1"
-gem "letter_opener", "~> 1.2.0"
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'pdfkit'
 gem 'activemerchant'
 # Use Uglifier as compressor for JavaScript assets
