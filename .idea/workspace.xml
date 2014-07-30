@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcb59997-c1dc-4cd6-8348-a41d763865bd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/free.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/free_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/free_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/free/index.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/controllers/free_controller_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/helpers/free_helper_test.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/product.rb" afterPath="$PROJECT_DIR$/app/admin/product.rb" />
     </list>
     <ignored path="depot_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +29,7 @@
       <file leaf-file-name="_navigation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="70" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1584">
+            <state line="14" column="70" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1562">
               <folding />
             </state>
           </provider>
@@ -60,7 +56,7 @@
       <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="1" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.0" vertical-offset="4743" max-vertical-offset="6688">
+            <state line="224" column="1" selection-start="4407" selection-end="4407" vertical-scroll-proportion="0.0" vertical-offset="4765" max-vertical-offset="6688">
               <folding />
             </state>
           </provider>
@@ -70,15 +66,6 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/flatuipro.less">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="22" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="264">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="1034">
               <folding />
             </state>
           </provider>
@@ -111,11 +98,72 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="4" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="1100">
+            <state line="3" column="4" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0" vertical-offset="66" max-vertical-offset="1100">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RailsDependency/#depot_test" pinned="false" current="true" current-in-tab="true">
+        <entry file="uml://RailsDependency/#depot_test">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>RailsDependency</ID>
+              <OriginalElement>#depot_test</OriginalElement>
+              <nodes>
+                <node x="434.0" y="350.0">Order</node>
+                <node x="0.0" y="136.125">User</node>
+                <node x="582.3641042135736" y="558.0376326793181">Model</node>
+                <node x="1023.9636539080091" y="71.70029216253886">LineItem</node>
+                <node x="443.35348986812494" y="-38.7069797362496">Product</node>
+                <node x="119.63975554840789" y="564.0511418462528">AdminUser</node>
+                <node x="846.8198777742039" y="349.20833333333337">PaymentNotification</node>
+                <node x="481.59408169829544" y="188.8494692827275">Cart</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="User" target="Order">
+                  <point x="172.0" y="70.5" />
+                  <point x="-131.5" y="-0.0" />
+                </edge>
+                <edge source="Order" target="PaymentNotification">
+                  <point x="131.5" y="39.0" />
+                  <point x="-90.5" y="33.75" />
+                </edge>
+                <edge source="Order" target="LineItem">
+                  <point x="131.5" y="-39.0" />
+                  <point x="-80.5" y="38.0" />
+                </edge>
+                <edge source="Cart" target="PaymentNotification">
+                  <point x="101.5" y="23.25" />
+                  <point x="707.0" y="286.75" />
+                  <point x="-90.5" y="-33.75" />
+                </edge>
+                <edge source="Cart" target="LineItem">
+                  <point x="101.5" y="-23.25" />
+                  <point x="707.0" y="240.25" />
+                  <point x="-80.5" y="-0.0" />
+                </edge>
+                <edge source="Product" target="LineItem">
+                  <point x="141.5" y="-0.0" />
+                  <point x="-80.5" y="-38.0" />
+                </edge>
+                <edge source="User" target="Product">
+                  <point x="172.0" y="-70.5" />
+                  <point x="-141.5" y="-0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.5683729433272394" x="677.1254422643938" y="470.220971373432" />
+              <SelectedNodes>
+                <node>Model</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Association fields</Category>
+                <Category>Migration fields</Category>
+              </Categories>
             </state>
           </provider>
         </entry>
@@ -636,17 +684,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19410875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1971299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33674964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33627018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1161,76 +1209,16 @@
         <state line="1" column="18" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462" />
       </provider>
     </entry>
-    <entry file="uml://RailsDependency/#depot_test">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>RailsDependency</ID>
-          <OriginalElement>#depot_test</OriginalElement>
-          <nodes>
-            <node x="172.9575471698114" y="89.47562893081766">Order</node>
-            <node x="-341.9858490566038" y="168.82350628930814">User</node>
-            <node x="470.0" y="556.0416666666666">Model</node>
-            <node x="797.0" y="203.5">LineItem</node>
-            <node x="424.0" y="334.04166666666663">Product</node>
-            <node x="-204.38207547169804" y="489.26336477987417">Admin</node>
-            <node x="787.0" y="0.0">PaymentNotification</node>
-            <node x="200.93396226415098" y="-104.23191823899374">Cart</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="User" target="Order">
-              <point x="172.0" y="-70.5" />
-              <point x="-131.5" y="-0.0" />
-            </edge>
-            <edge source="Order" target="PaymentNotification">
-              <point x="131.5" y="-39.0" />
-              <point x="-90.5" y="33.75" />
-            </edge>
-            <edge source="Order" target="LineItem">
-              <point x="131.5" y="39.0" />
-              <point x="-80.5" y="-0.0" />
-            </edge>
-            <edge source="Cart" target="PaymentNotification">
-              <point x="101.5" y="-23.25" />
-              <point x="707.0" y="28.291666666666657" />
-              <point x="-90.5" y="-33.75" />
-            </edge>
-            <edge source="Cart" target="LineItem">
-              <point x="101.5" y="23.25" />
-              <point x="707.0" y="74.79166666666666" />
-              <point x="-80.5" y="-38.0" />
-            </edge>
-            <edge source="Product" target="LineItem">
-              <point x="141.5" y="-0.0" />
-              <point x="-80.5" y="38.0" />
-            </edge>
-            <edge source="User" target="Product">
-              <point x="172.0" y="70.5" />
-              <point x="-141.5" y="-0.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.49417249417249415" x="-116.0" y="276.0" />
-          <SelectedNodes>
-            <node>Admin</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Migration fields</Category>
-            <Category>Association fields</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="70" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1584">
+        <state line="14" column="70" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1562">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="1" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.0" vertical-offset="4743" max-vertical-offset="6688">
+        <state line="224" column="1" selection-start="4407" selection-end="4407" vertical-scroll-proportion="0.0" vertical-offset="4765" max-vertical-offset="6688">
           <folding />
         </state>
       </provider>
@@ -1267,6 +1255,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="4" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="1100">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://RailsDependency/#depot_test">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>RailsDependency</ID>
+          <OriginalElement>#depot_test</OriginalElement>
+          <nodes>
+            <node x="434.0" y="350.0">Order</node>
+            <node x="0.0" y="136.125">User</node>
+            <node x="582.3641042135736" y="558.0376326793181">Model</node>
+            <node x="1023.9636539080091" y="71.70029216253886">LineItem</node>
+            <node x="443.35348986812494" y="-38.7069797362496">Product</node>
+            <node x="119.63975554840789" y="564.0511418462528">AdminUser</node>
+            <node x="846.8198777742039" y="349.20833333333337">PaymentNotification</node>
+            <node x="481.59408169829544" y="188.8494692827275">Cart</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="User" target="Order">
+              <point x="172.0" y="70.5" />
+              <point x="-131.5" y="-0.0" />
+            </edge>
+            <edge source="Order" target="PaymentNotification">
+              <point x="131.5" y="39.0" />
+              <point x="-90.5" y="33.75" />
+            </edge>
+            <edge source="Order" target="LineItem">
+              <point x="131.5" y="-39.0" />
+              <point x="-80.5" y="38.0" />
+            </edge>
+            <edge source="Cart" target="PaymentNotification">
+              <point x="101.5" y="23.25" />
+              <point x="707.0" y="286.75" />
+              <point x="-90.5" y="-33.75" />
+            </edge>
+            <edge source="Cart" target="LineItem">
+              <point x="101.5" y="-23.25" />
+              <point x="707.0" y="240.25" />
+              <point x="-80.5" y="-0.0" />
+            </edge>
+            <edge source="Product" target="LineItem">
+              <point x="141.5" y="-0.0" />
+              <point x="-80.5" y="-38.0" />
+            </edge>
+            <edge source="User" target="Product">
+              <point x="172.0" y="-70.5" />
+              <point x="-141.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5683729433272394" x="677.1254422643938" y="470.220971373432" />
+          <SelectedNodes>
+            <node>Model</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Association fields</Category>
+            <Category>Migration fields</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
