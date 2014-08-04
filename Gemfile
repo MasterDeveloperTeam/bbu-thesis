@@ -10,6 +10,7 @@ gem 'less-rails-bootstrap'
 gem 'designmodo-flatuipro-rails', '~> 1.2.4.0.branch'
 gem 'bootstrap-generators'
 gem 'simple_form'
+gem 'chosen-rails'
 gem 'paperclip', '~> 4.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

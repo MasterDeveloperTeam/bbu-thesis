@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include CurrentCart
   before_action :set_cart
   before_action :set_category
+  before_action :configure_permitted_parameters, if: :devise_controller?
   def set_category
   	  cate = params[:id]
     	if cate 
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
   	end
   	@first_product = Product.order(created_at: :desc).paginate(:page => params[:page], :per_page => 1)
   	@categories = Category.all
+  end
+  protected
+  def configure_permitted_parameters
+  	devise_parameter_sanitizer.for(:sign_up) << :username	
   end
 end

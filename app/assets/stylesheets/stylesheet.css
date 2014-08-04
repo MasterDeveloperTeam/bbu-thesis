@@ -70,6 +70,7 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
+
 ul,
 ol {
   list-style: none outside none;
@@ -445,7 +446,7 @@ textarea {
   padding: 3px;
   margin-left: 0px;
   margin-right: 0px;
-  text-align: center;
+
 }
 #page {
   margin: 0 auto;

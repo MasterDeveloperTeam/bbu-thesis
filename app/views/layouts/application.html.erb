@@ -13,7 +13,7 @@
   <![endif]-->
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -22,6 +22,7 @@
 
 </head>
 <body id="offcanvas-container" class="nokeep-header offcanvas-container layout-fullwidth fs12 page-common-home ">
+
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

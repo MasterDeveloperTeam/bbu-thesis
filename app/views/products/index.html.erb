@@ -31,6 +31,9 @@
                                 </ul>
                                 <p class="hidden-xs"><%= truncate( raw( sanitize(product.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 20, :omission => "...", style: "font-size:12px;")%></p>
                             </div>
+                            <blockquote>
+                            <small><%= product.created_at.strftime("%B %d, %Y")%></small>
+                            </blockquote>
                         </div>
                   </div>
               </div><!-- End Listing--> 

@@ -1,4 +1,5 @@
 <%= render 'layouts/navigation' %>
+<div class="container">
 <a name="detail"></a>
 <div class="jumbotron">
 <%= image_tag(@product.image_url)%>
@@ -6,5 +7,6 @@
   <p><%= @product.description%></p>
   <strong>Price:&nbsp;<%=number_to_currency(@product.price)%></strong>
   <p><%= button_to "Add to Cart", line_items_path(product_id: @product) ,:class => "btn  btn-primary btn-lg "%></p>
+</div>
 </div>
 <hr>

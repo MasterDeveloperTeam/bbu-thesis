@@ -78,9 +78,13 @@
  * Category Page
  */
 
- .pav-blog .image {
+ .pav-blog .image  {
  	text-align: center;
  }
+ .image >  img{
+  height: 200px;
+  width:300px;
+}
  .pav-blogs .blog-item,
 .pav-filter-blogs .blog-item{
   padding-bottom: 15px;
@@ -95,7 +99,7 @@
     float: right;
  }
   .blog-item .image {
-
+ 
   }
     .pavblog-latest .blog-item {
       margin-top: 7px;

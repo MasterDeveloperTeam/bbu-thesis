@@ -46,7 +46,7 @@
   <div class="form-group">
     <%= f.label "select category", :class => "col-lg-2 control-label" %>
     <div class="col-lg-10">
-      <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]}, :include_blank => true%>
+      <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]}, {:include_blank => true}, {:class => "chosen-select"}%>
     </div>
   </div>
 

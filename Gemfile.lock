@@ -67,6 +67,11 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.1.4)
+    chosen-rails (1.1.0)
+      coffee-rails (>= 3.2)
+      compass-rails (>= 1.1.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     chunky_png (1.2.9)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -85,6 +90,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    compass-rails (2.0.0)
+      compass (>= 0.12.2)
     designmodo-flatuipro-rails (1.2.4.0.branch)
       jquery-rails (>= 2.2.1)
       jquery-ui-rails (>= 4.0.3)
@@ -231,6 +238,7 @@ DEPENDENCIES
   activemerchant
   better_errors
   bootstrap-generators
+  chosen-rails
   coffee-rails (~> 4.0.0)
   compass
   designmodo-flatuipro-rails (~> 1.2.4.0.branch)

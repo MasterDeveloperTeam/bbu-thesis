@@ -1,5 +1,8 @@
 <%= render "layouts/navigation" %>
 <!-- Modal -->
+<div class="container">
+
+<div class="col-xs-12 col-sm-6 col-md-3">
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -14,6 +17,8 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+</div>
+</div>
 <section id="pav-slideshow" class="pav-slideshow hidden-xs hidden-sm">
   <div class="container">
           <div class="row">
@@ -75,6 +80,9 @@
 
 <!-- slide-header -->
 <div class="container">
+<blockquote>
+  <p>Cateloge</p>
+</blockquote>
  <div id="products" class="row">
     <%= render "products"%>
   </div><!-- /.row -->
@@ -123,85 +131,36 @@
 <div class="box pav-block bloglatest">
   <div class="box-heading"><span>Latest Blog</span></div>
           <div class="pavblog-latest clearfix box-content">
-            
-            
             <div class="row">
+            <% @latest_product.each do |latest| %>
               <div class="col-lg-4 col-sm-4 pavblock">
           <div class="blog-item">         
-            <div class="blog-body clearfix">
-              
+            <div class="blog-body clearfix"%>
               <div class="image clearfix">
-                                  <%= image_tag "blog1-300x160.jpg" %>
+                                  <%= image_tag(latest.image_url) %>
                               </div>
               <div class="group-blog">
                 <div class="blog-title">
-                  <a href="index-route=pavblog_blog&id=11.php.html" title="Donec tellus Nulla lorem Nullam elit id ut">Donec tellus Nulla lorem Nullam elit id ut</a>
+                  <%= link_to latest.title, store_show_path(product_id: latest)%>
                 </div>
 
                 <div class="description">
-                  <p>Donec tellus Nulla lorem Nullam elit id ut elit feugiat lacus. Cong...
+                  <%= truncate(latest.description, length: 50)%>
                 </div>
 
                 
                 <p class="created">
-                  <span>2013-03-11</span>
+                 <span><%= latest.created_at.strftime("%B %d, %Y")%></span>
                 </p>
+                 <%= link_to 'Read More', store_show_path(product_id: latest)%>
               </div>
               
             </div>  
           </div>
         </div>
-                  
+                  <% end %>
             
-              <div class="col-lg-4 col-sm-4 pavblock">
-          <div class="blog-item">         
-            <div class="blog-body clearfix">
-              
-              <div class="image clearfix"><%= image_tag "blog2-300x160.jpg" %>
-                              </div>
-              <div class="group-blog">
-                <div class="blog-title">
-                  <a href="index-route=pavblog_blog&id=10.php.html" title="Neque porro quisquam est, qui dolorem ipsum">Neque porro quisquam est, qui dolorem ipsum</a>
-                </div>
-
-                <div class="description">
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc...
-                </div>
-
-                
-                <p class="created">
-                  <span>2013-03-09</span>
-                </p>
-              </div>
-              
-            </div>  
-          </div>
-        </div>
-                  
             
-              <div class="col-lg-4 col-sm-4 pavblock">
-          <div class="blog-item">         
-            <div class="blog-body clearfix">
-              
-              <div class="image clearfix"><%= image_tag "blog3-300x160.jpg" %></div>
-              <div class="group-blog">
-                <div class="blog-title">
-                  <a href="index-route=pavblog_blog&id=9.php.html" title="Commodo laoreet semper tincidunt lorem ">Commodo laoreet semper tincidunt lorem </a>
-                </div>
-
-                <div class="description">
-                  <p>Commodo laoreet semper tincidunt lorem Vestibulum nunc at In Curabi...
-                </div>
-
-                
-                <p class="created">
-                  <span>2013-03-09</span>
-                </p>
-              </div>
-              
-            </div>  
-          </div>
-        </div>
             
       </div>
                 </div>

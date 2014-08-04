@@ -1,8 +1,5 @@
-
-
 <section id="page" class="offcanvas-pusher" role="main">
 <section id="header">
-
     <section id="topbar" class="">
       <div class="container"><div class="topbar"><div class="row">
       </div></div></div>
@@ -14,6 +11,13 @@
                         <div id="logo"><a href="index-route=common_home.php.html"><%= image_tag "logo.png" %></a></div>
                       
           </div>
+                  <div class="header-right pull-right wrap-cart hidden-xs ">
+    <div id="cart">
+   <span class="icon fa fa-shopping-cart"></span> 
+  <div class="heading">
+    <h4>Shopping Cart</h4>
+    <a href="#" data-toggle="modal" data-target="#myModal" ><span id="cart-total"> <%= render 'layouts/total_price'%></span></a></div>
+        </div></div>
           <div class="pull-left wrap-menu">
 
         <!--menu-->     
@@ -30,84 +34,75 @@
             <span class="icon-bar"></span>
          </a>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav megamenu"><li class="home" >
-          <%= link_to 'Home', store_path%></li>
+      <ul class="nav navbar-nav megamenu">
+      <li class="home" >
+          <%= link_to 'Home', store_path%>
+      </li>
+
         <li class="pav-parrent" >
-          <a href="index-route=product_category&path=33.php.html"><span class="menu-title">Cameras</span></a></li><li class="" >
-          <a href="#"><span class="menu-title">Office</span></a></li><li class="parent dropdown pav-parrent" >
+          <%= link_to "My Ebooks", user_profile_path%>
+          </li>
+          <li class="parent dropdown pav-parrent" >
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title">Categories</span><b class="caret"></b></a><div class="dropdown-menu level1"  ><div class="dropdown-menu-inner"><div class="row"><div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" ><div class="mega-col-inner"><ul>
             <li>
             <%@categories.each do |cate|%>
             <%= link_to(cate.name, {controller: "store", action: "index", id: cate.id})%>
             <%end%>
             </li>
-          </ul></div></div></div></div></div></li></ul>       </div></div>
+          </ul></div></div></div></div></div></li>
+          <!--admin-->
+          <% if current_admin_user || current_user %>
+          <li class="parent dropdown pav-parrent" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title"><% if current_admin_user%>
+                      <%= current_admin_user.email%>
+                     
+          </span><b class="caret"></b></a>
+          <div class="dropdown-menu level1"  >
+            <div class="dropdown-menu-inner">
+              <div class="row">
+                <div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" >
+                  <div class="mega-col-inner">
+                  <ul>
+            <li>           
+            <%= link_to "Dashboard", "/admin"%>
+            <%= link_to "Create product",  new_product_path%>
+            <%= link_to "List all products", products_path%>
+            <%= link_to "Logout", destroy_admin_user_session_path, method: :delete%>
+                  <% end %>
+          
+          <% if user_signed_in?%>
+                      <%= current_user.username%>
+                     
+          </span><b class="caret"></b></a>
+          <div class="dropdown-menu level1"  >
+            <div class="dropdown-menu-inner">
+              <div class="row">
+                <div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" >
+                  <div class="mega-col-inner">
+                  <ul>
+                    <li>           
+                     <%= link_to "My Ebooks", user_profile_path%>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+                     <% end %>
+                  <% end %>
+                    </li>
+            </li>
+
+          </ul></div></div></div></div></div>
+          
+         <!-- user -->
+         </ul> </div></div>
     </div>
   </div>
 </div>              </div>
           
 </div>
-          </div>
-          
-          <div class="mini-access visible-xs pull-right">
-            <ul>
-              <li><a href="index-route=account_wishlist.php.html" class="mini_wishlist"><i class="fa fa-heart"></i></a></li>
-              <li><a href="index-route=account_account.php.html" title="My Account" class="mini_account"><span class="fa fa-user"></span></a></li>
-              <li><a href="index-route=checkout_cart.php.html" title="Shopping Cart" class="mini_cart"><span class="fa fa-shopping-cart"></span></a></li>
-              <li class="exchange"><!--a href=""></a-->
-                <a href="javascript:void(0)" class=" dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon fa fa-exchange"></i>
-                </a>
-                <div class="dropdown-menu">
-                  <form action="http://demopavothemes.com/pav_floral/index.php?route=module/currency" method="post" enctype="multipart/form-data">
-  <div class="currency">                <a title="Euro" onclick="$('input[name=\'currency_code\']').attr('value', 'EUR'); $(this).parent().parent().submit();">€</a>
-                        <a title="Pound Sterling" onclick="$('input[name=\'currency_code\']').attr('value', 'GBP'); $(this).parent().parent().submit();">£</a>
-                        <a title="US Dollar"><b>$</b></a>
-                <input type="hidden" name="currency_code" value="" />
-    <input type="hidden" name="redirect" value="http://demopavothemes.com/pav_floral/index.php?route=common/home" />
-  </div>
-</form>
-                  <form action="http://demopavothemes.com/pav_floral/index.php?route=module/language" method="post" enctype="multipart/form-data">
-  <div class="language">        <img src="image/flags/gb.png" alt="English" title="English" onclick="$('input[name=\'language_code\']').attr('value', 'en'); $(this).parent().parent().submit();" />
-        <img src="image/flags/fr.png" alt="French" title="French" onclick="$('input[name=\'language_code\']').attr('value', 'fr'); $(this).parent().parent().submit();" />
-        <img src="image/flags/gq.png" alt="Persian" title="Persian" onclick="$('input[name=\'language_code\']').attr('value', 'fa'); $(this).parent().parent().submit();" />
-        <input type="hidden" name="language_code" value="" />
-    <input type="hidden" name="redirect" value="http://demopavothemes.com/pav_floral/index.php?route=common/home" />
-  </div>
-</form>
-                </div>
-              </li>
-              <li class="search">
-                <a href="javascript:void(0)" class="">
-                  <i class="icon fa fa-search"></i>
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-          
-          
-          
-          <div class="header-right pull-right wrap-cart hidden-xs ">
-            <div id="cart">
-   <span class="icon fa fa-shopping-cart"></span> 
-  <div class="heading">
-    <h4>Shopping Cart</h4>
-    <a href="#" data-toggle="modal" data-target="#myModal" ><span id="cart-total"> <%= render 'layouts/total_price'%></span></a></div>
-
-</div>            </div>
-          </div>
-        </div>
-      </div>
+</div>
+  
+  
+      
   </section>
 </section>
 
 
-<section id="sys-notification">
-  <div class="container">
-
-    
-    <div id="notification"></div>
-  </div>
-</section>
 

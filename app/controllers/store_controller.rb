@@ -8,7 +8,7 @@ class StoreController < ApplicationController
     	else
   	@products = Product.order(created_at: :desc).paginate(:page => params[:page], :per_page => 8)
   	end
-  	@first_product = Product.order(created_at: :desc).paginate(:page => params[:page], :per_page => 1)
+  	@latest_product = Product.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
   	@categories = Category.all
   end
   def show

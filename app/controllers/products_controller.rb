@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if cate 
     @products = Product.of_cate(cate)
     end
-    @products = Product.all
+    @products = Product.order(created_at: :desc)
   end
 
   # GET /products/1
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.js
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to products_path, notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
         format.html { render action: 'new' }
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to products_path, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
          format.js
       else
