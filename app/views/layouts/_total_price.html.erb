@@ -1,6 +1,8 @@
 
 	<% if @cart.total > 0%>
 		<% if @cart.purchased_at == nil %>
-		<%= number_to_currency(@cart.total)%>
+		<%= (@cart.count_product)%> item(s)&nbsp;&nbsp;<%= number_to_currency(@cart.total)%>
 		<% end %>
+	<% else%>
+		0 item(s)&nbsp;&nbsp;0$
 	<% end %>

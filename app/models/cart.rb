@@ -15,6 +15,9 @@ class Cart < ActiveRecord::Base
 	def total
 		line_items.to_a.sum{|item| item.total_price}		
 	end
+	def count_product
+		line_items.to_a.sum{|item| item.quantity}
+	end
 
 	def paypal_url(return_url, notify_url)
 		values={

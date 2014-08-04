@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729161246) do
+ActiveRecord::Schema.define(version: 20140804045214) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 20140729161246) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "purchased_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "line_items", force: true do |t|
@@ -119,6 +125,7 @@ ActiveRecord::Schema.define(version: 20140729161246) do
     t.string   "pdf_content_type"
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
+    t.integer  "category_id"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

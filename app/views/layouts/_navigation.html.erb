@@ -1,66 +1,113 @@
-<div class="navbar-wrapper">
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Ebookie</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><%=link_to 'Home', store_url%></li>
-                <li><%= link_to 'Pro Ebook', store_url%></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                    
-                  </ul>
-                </li>
-                
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-              <% if admin_user_signed_in?%>
-                <li  class="dropdown ">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <%= truncate(current_admin_user.email, :length => 11)%>
-                  <b class="glyphicon glyphicon-cog"></b></a>
-                  <ul class="dropdown-menu">
-                   <li>
-                   </li>                 
-                   
-                    <li><%= link_to 'Logout', destroy_admin_user_session_path, method: :delete%></li>
-                     <li><%= link_to 'Dashboard', "/admin"%></li>
-                    <li><%= link_to 'Create Product', new_product_path%></li>
-                    <li><%= link_to 'List products', products_path %></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Customer info</li>
-                    <li><%= link_to 'List order', ''%></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-                <% end %>
-                <% if current_user%>
 
-                <li><%=link_to 'Logout', destroy_user_session_path, :method => :delete , :comfrim => "Are you sure?"%></li>
-                <%else%>
-                <li><%=link_to 'Register', new_user_registration_path%></li>
-                <li><%= link_to 'login', new_user_session_path%></li>
-              </ul>
-              <%end%>
-            
-            </div>
+
+<section id="page" class="offcanvas-pusher" role="main">
+<section id="header">
+
+    <section id="topbar" class="">
+      <div class="container"><div class="topbar"><div class="row">
+      </div></div></div>
+    </section>
+    <section id="header-main">
+      <div class="container">
+        <div class="header-wrap">
+          <div class="pull-left wrap-logo">
+                        <div id="logo"><a href="index-route=common_home.php.html"><%= image_tag "logo.png" %></a></div>
+                      
+          </div>
+          <div class="pull-left wrap-menu">
+
+        <!--menu-->     
+<div id="pav-mainnav">
+
+            <div class="navbar-inverse">
+                  <div class="pav-megamenu">
+  <div class="navbar navbar-default">
+    <div id="mainmenutop" class="megamenu" role="navigation">
+      <div class="navbar-header">
+      <a href="javascript:;" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </a>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav megamenu"><li class="home" >
+          <%= link_to 'Home', store_path%></li>
+        <li class="pav-parrent" >
+          <a href="index-route=product_category&path=33.php.html"><span class="menu-title">Cameras</span></a></li><li class="" >
+          <a href="#"><span class="menu-title">Office</span></a></li><li class="parent dropdown pav-parrent" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title">Categories</span><b class="caret"></b></a><div class="dropdown-menu level1"  ><div class="dropdown-menu-inner"><div class="row"><div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" ><div class="mega-col-inner"><ul>
+            <li>
+            <%@categories.each do |cate|%>
+            <%= link_to(cate.name, {controller: "store", action: "index", id: cate.id})%>
+            <%end%>
+            </li>
+          </ul></div></div></div></div></div></li></ul>       </div></div>
+    </div>
+  </div>
+</div>              </div>
+          
+</div>
+          </div>
+          
+          <div class="mini-access visible-xs pull-right">
+            <ul>
+              <li><a href="index-route=account_wishlist.php.html" class="mini_wishlist"><i class="fa fa-heart"></i></a></li>
+              <li><a href="index-route=account_account.php.html" title="My Account" class="mini_account"><span class="fa fa-user"></span></a></li>
+              <li><a href="index-route=checkout_cart.php.html" title="Shopping Cart" class="mini_cart"><span class="fa fa-shopping-cart"></span></a></li>
+              <li class="exchange"><!--a href=""></a-->
+                <a href="javascript:void(0)" class=" dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon fa fa-exchange"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <form action="http://demopavothemes.com/pav_floral/index.php?route=module/currency" method="post" enctype="multipart/form-data">
+  <div class="currency">                <a title="Euro" onclick="$('input[name=\'currency_code\']').attr('value', 'EUR'); $(this).parent().parent().submit();">€</a>
+                        <a title="Pound Sterling" onclick="$('input[name=\'currency_code\']').attr('value', 'GBP'); $(this).parent().parent().submit();">£</a>
+                        <a title="US Dollar"><b>$</b></a>
+                <input type="hidden" name="currency_code" value="" />
+    <input type="hidden" name="redirect" value="http://demopavothemes.com/pav_floral/index.php?route=common/home" />
+  </div>
+</form>
+                  <form action="http://demopavothemes.com/pav_floral/index.php?route=module/language" method="post" enctype="multipart/form-data">
+  <div class="language">        <img src="image/flags/gb.png" alt="English" title="English" onclick="$('input[name=\'language_code\']').attr('value', 'en'); $(this).parent().parent().submit();" />
+        <img src="image/flags/fr.png" alt="French" title="French" onclick="$('input[name=\'language_code\']').attr('value', 'fr'); $(this).parent().parent().submit();" />
+        <img src="image/flags/gq.png" alt="Persian" title="Persian" onclick="$('input[name=\'language_code\']').attr('value', 'fa'); $(this).parent().parent().submit();" />
+        <input type="hidden" name="language_code" value="" />
+    <input type="hidden" name="redirect" value="http://demopavothemes.com/pav_floral/index.php?route=common/home" />
+  </div>
+</form>
+                </div>
+              </li>
+              <li class="search">
+                <a href="javascript:void(0)" class="">
+                  <i class="icon fa fa-search"></i>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          
+          
+          <div class="header-right pull-right wrap-cart hidden-xs ">
+            <div id="cart">
+   <span class="icon fa fa-shopping-cart"></span> 
+  <div class="heading">
+    <h4>Shopping Cart</h4>
+    <a href="#" data-toggle="modal" data-target="#myModal" ><span id="cart-total"> <%= render 'layouts/total_price'%></span></a></div>
+
+</div>            </div>
           </div>
         </div>
-    </div>
-<!-- End navbar !-->
+      </div>
+  </section>
+</section>
+
+
+<section id="sys-notification">
+  <div class="container">
+
+    
+    <div id="notification"></div>
+  </div>
+</section>
+

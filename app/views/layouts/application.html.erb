@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+,<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ebookie</title>
+  <title>Starter Template for Bootstrap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -15,36 +15,21 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
+
+
 </head>
-<body>
- 
-
-    <!-- Carousel
-    ================================================== -->
-
- <!-- Carousel
-    ================================================== -->
-   
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="space-from-top"></div>
-
-  <div class="container">
-
+<body id="offcanvas-container" class="nokeep-header offcanvas-container layout-fullwidth fs12 page-common-home ">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <%= msg %>
       <% end %>
-
-
     <% end %>
 
     <%= yield %>
-  </div>
   
 </body>
 </html>

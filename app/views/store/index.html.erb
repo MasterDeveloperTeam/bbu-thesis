@@ -1,4 +1,4 @@
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<%= render "layouts/navigation" %>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -14,268 +14,480 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-      
-        <div class="item active">
-          <%= image_tag('pic1-banner.jpg')%>
-           <div class="carousel-caption">
-            <h3>Technology and Accounting Center(TAC)</h3>
-          <p></p>
-          </div>
-        </div><!-- End Item -->
- 
-         <div class="item">
-          <img src="http://placehold.it/1200x400/999999/cccccc">
-           <div class="carousel-caption">
-            <h3>Headline</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-        
-        <div class="item">
-          <img src="http://placehold.it/1200x400/dddddd/333333">
-           <div class="carousel-caption">
-            <h3>Headline</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-        
-        <div class="item">
-          <img src="http://placehold.it/1200x400/999999/cccccc">
-           <div class="carousel-caption">
-            <h3>Headline</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-          </div>
-        </div><!-- End Item -->
-                
-      </div><!-- End Carousel Inner -->
-
-
-      <ul class="nav nav-pills nav-justified">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>our School</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum dolor sit</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum dolor sit</small></a></li>
-        </ul>
-
-
-    </div><!-- End Carousel -->
-</div>
-<div class="container">
-  <div class="row featurette">
-<div class="navbar-wrapper">
-      
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">TAC</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li ><%=link_to store_url do %>
-                <i class="fa fa-home"></i> Home
-                <% end %>
-                </li>
-                <li><%= link_to store_url do %>
-                    <i class="fa fa-book"></i> Pro Ebook
-                    <% end %>
-                </li>
-
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-
-              </ul>
-              
-                <!--User notification!-->
-                <% if user_signed_in?%> 
-                  <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= truncate(current_admin_user.email, :length => 8)%> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete%></li>
-                    <li><%= link_to 'User Home', user_profile_url%></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-                </ul>
-                <%elsif admin_user_signed_in?%>
-                    <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown" >
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= truncate(current_admin_user.email, :length => 11)%> <b class="glyphicon glyphicon-cog"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to 'Logout', destroy_admin_user_session_path, method: :delete%></li>
-                    <li><%= link_to 'Dashboard', "/admin"%></li>
-                    <li><%= link_to 'Create Product', new_product_path%></li>
-                    <li><%= link_to 'List products', products_path %></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Customer info</li>
-                    <li><%= link_to 'List order', ''%></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-                </ul>
-
-                
-                <% end %>
-                <!-- end user notification !-->
-              <ul class="nav navbar-nav navbar-right">
-                <li  class="dropdown " data-toggle="tooltip" title="Click to see cart info">
-                  <a href="#" data-toggle="modal" data-target="#myModal">
-                  <span class="glyphicon glyphicon-shopping-cart cart-text" id="cart" ><%= render "layouts/total_price"%></span>
-                  <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                   
-                   
-                    <li class="divider"></li>
-                
-                    <li><a href="#">---------------------------------------------------</a></li>
-                  </ul>
-                </li>
-                <li><%= link_to user_profile_url do %>
-                <i class="fa fa-download"></i> My Ebook
-                <% end %>
-                </li>
-                <% if !signed_in?%>
-                <li><%= link_to 'Register', new_user_registration_path%></li>
-                <li><%= link_to new_user_session_path do %>
-                <i class="fa-sign-in"></i> Login
-                <% end %>
-                </li>
-                <%end%>
-              </ul>
-                
-            </div>
-          </div>
-        </div>
+<section id="pav-slideshow" class="pav-slideshow hidden-xs hidden-sm">
+  <div class="container">
+          <div class="row">
+              <div class="col-lg-9 col-md-9 col-sm-9">
+                    <div id="pavcontentslider8" class="carousel slide pavcontentslider">
+                          <div class="carousel-inner">
+                                <div class="item active">
+                                    <%= image_tag "slide1-873x380.jpg" %></a>
+                                      <div class="pav-caption slideExpandUp big-caption pink" style="top:85px;left:50px">
+                                        Amazing pink tulip</div>
+                                        <div class="pav-caption pullUp detail" style="top:238px;left:50px">
+                                        <a href="#" class="button">Detail<i class="fa fa-long-arrow-right"></i></a>         </div>
+                                        <div class="pav-caption expandUp desc" style="top:130px;left:50px">
+                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagis sem nibh id elit. Duis sed odio</div>
+                                </div>
+                                <div class="item ">
+                                     <%= image_tag "slide2-873x380.jpg" %></a>
+                                        <div class="pav-caption hatch  big-caption purple" style="top:85px;left:50px">
+                                        Sed ut perspiciatis</div>
+                                                <div class="pav-caption expandOpen desc" style="top:130px;left:50px">
+                                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt</div>
+                                                <div class="pav-caption bigEntrance detail" style="top:238px;left:50px">
+                                        <a href="#" class="button">Detail<i class="fa fa-long-arrow-right"></i></a></div>
+                                </div>
+                                <div class="item ">
+                                     <%= image_tag "slide3-873x380.jpg" %></a>
+                                     <div class="pav-caption pullDown  big-caption white" style="top:85px;left:50px">
+                                      Nam libero tem </div>
+                                              <div class="pav-caption hatch desc white" style="top:130px;left:50px">
+                                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas</div>
+                                              <div class="pav-caption expandOpen detail" style="top:238px;left:50px">
+                                      <a href="#" class="button">Detail<i class="fa fa-long-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+    <a class="carousel-control left " href="#pavcontentslider8" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#pavcontentslider8" data-slide="next">&rsaquo;</a>
+            <ol class="carousel-indicators">
+              <li data-target="#pavcontentslider8" data-slide-to="0" class="active"></li>
+              <li data-target="#pavcontentslider8" data-slide-to="1" class=""></li>
+              <li data-target="#pavcontentslider8" data-slide-to="2" class=""></li>
+            </ol>
     </div>
-<!-- End navbar !-->
-
-
-  <div class="container marketing">
- <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-     <hr class="featurette-divider">
-      <!-- Three columns of text below the carousel -->
-
-    <div id="products" class="row">
-    <%= render "products"%>
-     
-	  </div><!-- /.row -->
-
-      </div><!-- /.row -->
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <script type="text/javascript">
+  <!--
+    $('#pavcontentslider8').carousel({interval:8000});
+  -->
+  </script>
+</div>
+      <div class="col-lg-3 col-md-3 col-sm-3"><div class="box pav-custom">
+        <div class="box-content">
+            <p style="margin-bottom:20px"><%= image_tag "adv2.jpg" %></p>
+            <p style=""><%= image_tag "adv3.jpg" %></p>
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
+</div>
       </div>
+  </div>
+</section>
 
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-     
-
-    </div><!-- /.container -->
-
+<!-- slide-header -->
 <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-          <div class="col-md-3">
-              <ul class="list-unstyled">
-                  <li>Github</li>
-                  <li><a href="#">About Us</a></li>
-                   <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact & Support</a></li>
-                     <li><a href="#">Enterprise</a></li>
-                      <li><a href="#">Site Status</a></li>
-              </ul>
+ <div id="products" class="row">
+    <%= render "products"%>
+  </div><!-- /.row -->
+  </div>
+<section id="pav-mass-bottom">
+  <div class="container">
+        <div class="row"> 
+      <div class="col-lg-3 col-md-3 col-sm-3">     <div id="pavtestimonial32" class="carousel slide pavtestimonial">
+    <div class="carousel-inner">
+      
+              <div class="item active ">
+          <div class="testimonial-item">
+                        <div class="testimonial">
+              <span class="fa fa-quote-left icon"></span>
+              <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+</div>
+            </div>
+                        <div class="t-avatar"><img alt="QuynhVT
+
+..." src="image/cache/data/testimonial2-108x108.jpg" class="img-circle"/></div>
+                        <div class="profile">
+              <div><h3>QuynhVT</h3>
+
+<p>Suppor Manager</p>
+</div>
+            </div>
+                                  </div>
+        </div>
           </div>
-           <div class="col-md-3">
-              <ul class="list-unstyled">
-                  <li>Github</li>
-                  <li><a href="#">About Us</a></li>
-                   <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact & Support</a></li>
-                     <li><a href="#">Enterprise</a></li>
-                      <li><a href="#">Site Status</a></li>
-              </ul>
+    <a class="carousel-control left" href="#pavtestimonial32" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#pavtestimonial32" data-slide="next">&rsaquo;</a>
+        </div>
+    <script type="text/javascript">
+  <!--
+    $('#pavtestimonial32').carousel({interval:8000,auto:true,pause:'hover'});
+  -->
+  </script>
+    <script type="text/javascript"><!--
+    $(document).ready(function() {
+      $('.colorbox-t').colorbox({iframe:true, innerWidth:640, innerHeight:390});
+    });
+//--></script> 
+</div>
+
+<div class="col-lg-9 col-md-9 col-sm-9">
+<div class="box pav-block bloglatest">
+  <div class="box-heading"><span>Latest Blog</span></div>
+          <div class="pavblog-latest clearfix box-content">
+            
+            
+            <div class="row">
+              <div class="col-lg-4 col-sm-4 pavblock">
+          <div class="blog-item">         
+            <div class="blog-body clearfix">
+              
+              <div class="image clearfix">
+                                  <%= image_tag "blog1-300x160.jpg" %>
+                              </div>
+              <div class="group-blog">
+                <div class="blog-title">
+                  <a href="index-route=pavblog_blog&id=11.php.html" title="Donec tellus Nulla lorem Nullam elit id ut">Donec tellus Nulla lorem Nullam elit id ut</a>
+                </div>
+
+                <div class="description">
+                  <p>Donec tellus Nulla lorem Nullam elit id ut elit feugiat lacus. Cong...
+                </div>
+
+                
+                <p class="created">
+                  <span>2013-03-11</span>
+                </p>
+              </div>
+              
+            </div>  
           </div>
-           <div class="col-md-3">
-              <ul class="list-unstyled">
-                  <li>Github</li>
-                  <li><a href="#">About Us</a></li>
-                   <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact & Support</a></li>
-                     <li><a href="#">Enterprise</a></li>
-                      <li><a href="#">Site Status</a></li>
-              </ul>
+        </div>
+                  
+            
+              <div class="col-lg-4 col-sm-4 pavblock">
+          <div class="blog-item">         
+            <div class="blog-body clearfix">
+              
+              <div class="image clearfix"><%= image_tag "blog2-300x160.jpg" %>
+                              </div>
+              <div class="group-blog">
+                <div class="blog-title">
+                  <a href="index-route=pavblog_blog&id=10.php.html" title="Neque porro quisquam est, qui dolorem ipsum">Neque porro quisquam est, qui dolorem ipsum</a>
+                </div>
+
+                <div class="description">
+                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem acc...
+                </div>
+
+                
+                <p class="created">
+                  <span>2013-03-09</span>
+                </p>
+              </div>
+              
+            </div>  
           </div>
-           <div class="col-md-3">
-              <ul class="list-unstyled">
-                  <li>Github</li>
-                  <li><a href="#">About Us</a></li>
-                   <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact & Support</a></li>
-                     <li><a href="#">Enterprise</a></li>
-                      <li><a href="#">Site Status</a></li>
-              </ul>
+        </div>
+                  
+            
+              <div class="col-lg-4 col-sm-4 pavblock">
+          <div class="blog-item">         
+            <div class="blog-body clearfix">
+              
+              <div class="image clearfix"><%= image_tag "blog3-300x160.jpg" %></div>
+              <div class="group-blog">
+                <div class="blog-title">
+                  <a href="index-route=pavblog_blog&id=9.php.html" title="Commodo laoreet semper tincidunt lorem ">Commodo laoreet semper tincidunt lorem </a>
+                </div>
+
+                <div class="description">
+                  <p>Commodo laoreet semper tincidunt lorem Vestibulum nunc at In Curabi...
+                </div>
+
+                
+                <p class="created">
+                  <span>2013-03-09</span>
+                </p>
+              </div>
+              
+            </div>  
           </div>
+        </div>
+            
       </div>
+                </div>
+      </div>
+
+</div>
+      </div>  
+    
+  </div>  
+</section>
+<section id="footer">
+    <div class="footer-top">
+    <div class="container">
+      <div class="wrap-fcenter">  
+              <div class="row"> 
+        <div class="col-lg-12 col-md-12"><div class="box pav-custom  cusblock">
+<div class="box-content"><div class="row quickaccess">
+<div class="col-lg-3 col-md-3"><span class="fa fa-tags icon">&nbsp;</span>
+<h3>Best prices</h3>
+
+<p>Lorem quis bibendum auctor</p>
+</div>
+
+<div class="col-lg-3 col-md-3"><span class="fa fa-gift icon">&nbsp;</span>
+
+<h3>Free gift</h3>
+
+<p>Bibendum auctor nisi elit ceuat</p>
+</div>
+
+<div class="col-lg-3 col-md-3"><span class="fa fa-lock icon">&nbsp;</span>
+
+<h3>Secure payment</h3>
+
+<p>Misi elit consequat ipsum</p>
+</div>
+
+<div class="col-lg-3 col-md-3"><span class="fa fa-calendar icon">&nbsp;</span>
+
+<h3>Support 24/7</h3>
+
+<p>Consequat ipsum nec sagis sem</p>
+</div>
+</div>
+</div>
+</div></div>
+          
+                
+        <div class="col-lg-12 col-md-12"><div class=" box newsletter_block" id="newsletter_footer_top0">
+  <div class="row">
+    <div class="col-sm-6 title_block">Newsletter</div>
+  <div class="description"></div>
+    <div class="col-sm-6 block_content">
+    <form id="formNewLestter" method="post" action="http://demopavothemes.com/pav_floral/index.php?route=module/pavnewsletter/subscribe">
+    <p class="wrap-input">
+      <input type="text" class="inputNew"  onblur="javascript:if(this.value=='')this.value='Your email address';" onfocus="javascript:if(this.value=='Your email address')this.value='';" value="Your email address" size="18" name="email">
+      <i class="fa fa-long-arrow-right"></i>
+      <input type="submit" name="submitNewsletter" class="button_mini" value="Ok">
+      <input type="hidden" value="1" name="action">
+    </p>
+      <div class="valid"></div>
+    </form>
+    </div>
   </div>
-    <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Tac, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+</div>
+<script type="text/javascript">
+ 
+  $('#formNewLestter').on('submit', function() {
+    var sbt =  '<img src=\"catalog/view/theme/default/image/close.png\" alt=\"\" class=\"close\">';
+    var email = $('.inputNew').val();
+    $(".warning, .success").remove();
+    if(!isValidEmailAddress(email)) {
+      $('.valid').html("<div class=\"warning\">Email is not valid!"+sbt+"</div>");
+      $('.inputNew').focus();
+      return false;
+    }
+    var url = "http://demopavothemes.com/pav_floral/index.php?route=module/pavnewsletter/subscribe";
+    $.ajax({
+      type: "post",
+      url: url,
+      data: $("#formNewLestter").serialize(),
+      dataType: 'json',
+      success: function(json)
+      {
+        $(".warning, .success").remove();
+        if (json['error']) {
+          $('.valid').html("<div class=\"warning\">"+json['error']+sbt+"</div>");
+        }
+        if (json['success']) {
+          $('.valid').html("<div class=\"success\">"+json['success']+sbt+"</div>");
+        }
+      }
+    });
+    return false;
+  });
+
+
+function isValidEmailAddress(emailAddress) {
+  var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+  return pattern.test(emailAddress);
+}
+</script>
+
+</div>
+        </div>  
+            </div>
+    </div>
   </div>
+  
+
+    <div class="footer-center">
+    <div class="container"><div class="wrap-fcenter">
+            <div class="row"> 
+        <div class="col-lg-3 col-md-3"><div class="box pav-custom  ">
+<div class="box-heading"><h2>Contact Us</h2></div>
+<div class="box-content"><p>We have 152 guests and 14 members online</p>
+
+<p>Phone: +01 888 (000) 1234</p>
+
+<p>Fax: +01 888 (000) 1234</p>
+
+<p>Email: www.leotheme.com</p>
+
+<ul class="social">
+  <li><a href="http://facebook.com"><i class="fa fa-facebook">&nbsp;</i></a></li>
+  <li><a href="http://twitter.com"><i class="fa fa-twitter">&nbsp;</i></a></li>
+  <li><a href="https://plus.google.com"><i class="fa fa-google-plus">&nbsp;</i></a></li>
+  <li><a href="http://youtube.com"><i class="fa fa-youtube">&nbsp;</i></a></li>
+</ul>
+</div>
+</div></div>
+          
+              
+        <div class="col-lg-3 col-md-3">
+<div class="box">
+  
+  <div class="box-heading">My Twitter</div>
+    <div class="box-content">
+    <div id="pav-twitter820277107" class="pav-twitter">
+      <a class="twitter-timeline" data-dnt="true" data-theme="dark" data-link-color="#3ABEC0" data-width="" data-height="100" data-chrome="noheader nofooter noborders transparent" data-border-color="#FFFFFF" lang="en" data-tweet-limit="1" data-show-replies="true" href="https://twitter.com/pavothemes"  data-widget-id="366766896986591232">Tweets by @pavothemes</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </div>
+  </div>
+</div>
+</div>
+          
+              
+        <div class="col-lg-2 col-md-2"><div class="box pav-custom  ">
+<div class="box-heading"><h2>Information</h2></div>
+<div class="box-content"><ul class="list">
+  <li><a href="index-route=information_information&information_id=4.php.html">About Us</a></li>
+  <li><a href="index-route=information_information&information_id=6.php.html">Delivery Information</a></li>
+  <li><a href="index-route=information_information&information_id=3.php.html">Privacy Policy</a></li>
+  <li><a href="index-route=information_information&information_id=5.php.html">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+</div></div>
+        <div class="col-lg-2 col-md-2"><div class="box pav-custom  ">
+<div class="box-heading"><h2>Customer Service</h2></div>
+<div class="box-content"><ul class="list">
+  <li><a href="index-route=information_contact.php.html">Contact Us</a></li>
+  <li><a href="index-route=account_return_insert.php.html">Returns</a></li>
+  <li><a href="index-route=information_sitemap.php.html">Site Map</a></li>
+  <li><a href="index-route=product_manufacturer.php.html">Brands</a></li>
+  <li><a href="index-route=account_voucher.php.html">Gift Vouchers</a></li>
+</ul>
+</div>
+</div></div>
+          
+              
+        <div class="col-lg-2 col-md-2"><div class="box pav-custom  ">
+<div class="box-heading"><h2>My Account</h2></div>
+<div class="box-content"><ul class="list">
+  <li><a href="index-route=account_account.php.html">My Account</a></li>
+  <li><a href="index-route=account_order.php.html">Order History</a></li>
+  <li><a href="index-route=account_wishlist.php.html">Wish List</a></li>
+  <li><a href="index-route=account_newsletter.php.html">Newsletter</a></li>
+  <li><a href="index-route=product_special.php.html">Specials</a></li>
+</ul>
+</div>
+</div></div>
+        </div>  
+      
+  
+    </div></div>
+  </div>
+  
+
+
+  
+  <!--
+  OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+  Please donate via PayPal to donate@opencart.com
+  //-->
+  <div id="powered">
+    <div class="container">
+      <div class="powered">
+        <div class="copyright pull-left">
+                      Powered By <a href="http://www.opencart.com">OpenCart</a><br /> Floral Store &copy; 2014. 
+                    Design By <a href="http://www.pavothemes.com" title="pavethemes - opencart themes clubs">PavoThemes</a>
+        </div>
+        <div class="paypal pull-right"><img src="image/data/paypal.png" alt=""><a href="#"></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+
+
+
+
+</div> 
+ 
+<script type="text/javascript">
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+$('#myTab a:first').tab('show'); 
+ 
+
+var $MAINCONTAINER = $("html");
+
+/**
+ * BACKGROUND-IMAGE SELECTION
+ */
+$(".background-images").each( function(){
+  var $parent = this;
+  var $input  = $(".input-setting", $parent ); 
+  $(".bi-wrapper > div",this).click( function(){
+     $input.val( $(this).data('val') ); 
+     $('.bi-wrapper > div', $parent).removeClass('active');
+     $(this).addClass('active');
+
+     if( $input.data('selector') ){  
+      $($input.data('selector'), $($MAINCONTAINER) ).css( $input.data('attrs'),'url('+ $(this).data('image') +')' );
+     }
+  } );
+} ); 
+
+$(".clear-bg").click( function(){
+  var $parent = $(this).parent();
+  var $input  = $(".input-setting", $parent ); 
+  if( $input.val('') ) {
+    if( $parent.hasClass("background-images") ) {
+      $('.bi-wrapper > div',$parent).removeClass('active'); 
+      $($input.data('selector'),$("#main-preview iframe").contents()).css( $input.data('attrs'),'none' );
+    }else {
+      $input.attr( 'style','' ) 
+    }
+    $($input.data('selector'), $($MAINCONTAINER) ).css( $input.data('attrs'),'inherit' );
+
+  } 
+  $input.val('');
+
+  return false;
+} );
+
+
+
+ $('.accordion-group input.input-setting').each( function(){
+   var input = this;
+   $(input).attr('readonly','readonly');
+   $(input).ColorPicker({
+    onChange:function (hsb, hex, rgb) {
+      $(input).css('backgroundColor', '#' + hex);
+      $(input).val( hex );
+      if( $(input).data('selector') ){  
+        $( $MAINCONTAINER ).find($(input).data('selector')).css( $(input).data('attrs'),"#"+$(input).val() )
+      }
+    }
+   });
+  } );
+ $('.accordion-group select.input-setting').change( function(){
+  var input = this; 
+    if( $(input).data('selector') ){  
+    var ex = $(input).data('attrs')=='font-size'?'px':"";
+    $( $MAINCONTAINER ).find($(input).data('selector')).css( $(input).data('attrs'), $(input).val() + ex);
+  }
+ } );
+ 
+
+</script>
+</section> 

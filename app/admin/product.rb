@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
   controller do 
     def permitted_params
-      params.permit product:[:title,:description,:image_url, :pdf,:price]
+      params.permit product:[:title,:description,:image_url, :pdf,:price, :category_id]
     end
   end
   index do
