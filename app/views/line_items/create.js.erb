@@ -1,2 +1,3 @@
 $("#cart-blog").html("<%=escape_javascript render(@cart)%>");
 $("span#cart-total").html("<%=escape_javascript(render(:partial => 'layouts/total_price.html.erb'))%>");
+$("#display-cart").html("<%=escape_javascript render(@cart)%>");
