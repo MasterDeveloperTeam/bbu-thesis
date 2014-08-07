@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'devise'
 # Use sqlite3 as the database for Active Record
 gem 'better_errors'
+gem 'annotate', '~> 2.6.5'
 gem 'jquery-ui-rails'
 gem 'less-rails-bootstrap'
 gem 'designmodo-flatuipro-rails', '~> 1.2.4.0.branch'

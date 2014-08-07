@@ -21,15 +21,12 @@
 
 
 </head>
-<body id="offcanvas-container" class="nokeep-header offcanvas-container layout-fullwidth fs12 page-common-home ">
-
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do %>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= msg %>
-      <% end %>
-    <% end %>
-
+<body>
+<div class="container">
+<% if notice %>
+  <%= render partial: "layouts/flash_messages", flash: flash %> 
+<% end %>
+</div>
     <%= yield %>
   
 </body>

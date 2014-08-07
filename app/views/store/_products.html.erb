@@ -16,6 +16,19 @@
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                           <% if @cart.purchased_at !=nil %>
+                                          <script src="http://max.jotfor.ms/min/g=feedback2" type="text/javascript">
+                                            new JotformFeedback({
+                                            formID=42174990568466
+                                            windowTitle:'ពិនិត្យមើល My ebooks, Check My ebooks',
+                                            background:'#FFA500',
+                                            fontColor:'#FFFFFF',
+                                            type:false,
+                                            height:0,
+                                            width:700,
+                                            openOnLoad:true
+                                            });
+                                            </script>
+
                                              <% if @cart.line_items.exists?(:product_id => product.id)%>
                                         &nbsp;&nbsp;&nbsp; <%=link_to 'Download', product.pdf.url, :class => "btn btn-default btn-xs"%>
                                             <%end%>

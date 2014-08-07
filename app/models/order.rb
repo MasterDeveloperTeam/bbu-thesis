@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  address      :text
+#  user_id      :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  purchased_at :datetime
+#  company      :string(255)
+#  city         :string(255)
+#  zipcode      :string(255)
+#
+
 class Order < ActiveRecord::Base
   belongs_to :user
   has_many :line_items, :dependent => :destroy
