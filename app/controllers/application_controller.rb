@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include CurrentCart
   before_action :set_cart
+  before_filter :mailer_set_url_options
   before_action :set_category
   before_action :configure_permitted_parameters, if: :devise_controller?
   def set_category
@@ -19,5 +20,11 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters
   	devise_parameter_sanitizer.for(:sign_up) << :username	
+  end
+
+
+
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
 end

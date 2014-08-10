@@ -540,11 +540,14 @@ body.layout-boxed-lg #page {
   margin: 15px 0px;
 }
 #header-main {
+  position:fixed;
+  top:0;
   background-color: #FFFFFF;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   left: 0;
   right: 0;
-  z-index: 99999;
+  z-index: 1000;
+  
 }
 #header-main .header-wrap {
   height: 86px;
@@ -3127,4 +3130,13 @@ body,
     display: block;
   }
 }
-.
+.shadow{
+  -webkit-transition: .3s all ease-in-out;
+  -moz-transition: .3s all ease-in-out;
+  -o-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+      -o-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}

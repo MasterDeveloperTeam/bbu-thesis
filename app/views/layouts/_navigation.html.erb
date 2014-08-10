@@ -1,3 +1,4 @@
+
 <section id="page" class="offcanvas-pusher" role="main">
 <section id="header">
     <section id="topbar" class="">
@@ -42,6 +43,7 @@
         <li class="pav-parrent" >
           <%= link_to "My Ebooks", user_profile_path%>
           </li>
+
           <li class="parent dropdown pav-parrent" >
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title">Categories</span><b class="caret"></b></a><div class="dropdown-menu level1"  ><div class="dropdown-menu-inner"><div class="row"><div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" ><div class="mega-col-inner"><ul>
             <li>
@@ -87,9 +89,11 @@
                   <% end %>
                     </li>
             </li>
-
+         <li class="pav-parrent" >
+          <%= link_to "Login", new_user_session_path%>
+          </li>
           </ul></div></div></div></div></div>
-          
+        
          <!-- user -->
          </ul> </div></div>
     </div>
@@ -106,3 +110,17 @@
 
 
 
+
+<script type="text/javascript">
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 300) {
+        //clearHeader, not clearheader - caps H
+        $("#header-main").addClass("shadow");
+    }else{
+      $("#header-main").removeClass("shadow");
+    }
+}); //missing );
+</script>

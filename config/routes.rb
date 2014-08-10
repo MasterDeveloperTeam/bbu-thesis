@@ -6,11 +6,7 @@ DepotTest::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :orders
 
-    get "user_profile/index", :as => 'user_profile'
-
-
-  get "free/index"
-
+  get "user_profile/index", :as => 'user_profile'
   get "payment_notifications/create"
   resources :payment_notifications
   devise_for :models
