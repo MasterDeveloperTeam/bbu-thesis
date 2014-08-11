@@ -14,13 +14,37 @@
   <div class="form-group">
     <%= f.label :name, :class => "col-lg-2 control-label" %>
     <div class="col-lg-10">
-      <%= f.text_field :name, :class => "form-control" %>
+      <%= f.text_field :name, :class => "form-control", value: current_user.username %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :address, :class => "col-lg-2 control-label" %>
     <div class="col-lg-10">
       <%= f.text_area :address, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :company, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :city, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zipcode, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :zipcode, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.country_code_select(:country) %>
     </div>
   </div>
   <div class="form-group">

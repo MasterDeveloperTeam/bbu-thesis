@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :authenticate_admin!, :unles => proc{|c| c.devise_controller?}, only:[:index]
-  before_action :authenticate_user!, :unless => proc {|c| c.devise_controller?}
+  before_action :authenticate_admin_user, only:[:index]
+  before_action :authenticate_user!, :unless => proc {|c| c.devise_controller?},only: [:create, :new]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only:[:new, :create, :show]
 

@@ -1,0 +1,130 @@
+
+<section id="page" class="offcanvas-pusher" role="main">
+<section id="header">
+    <section id="topbar" class="">
+      <div class="container"><div class="topbar"><div class="row">
+      </div></div></div>
+    </section>
+    <section id="header-main">
+      <div class="container">
+        <div class="header-wrap">
+          <div class="pull-left wrap-logo">
+                        <div id="logo"><a href="index-route=common_home.php.html"><%= image_tag "logo.png" %></a></div>
+                      
+          </div>
+                  <div class="header-right pull-right wrap-cart hidden-xs ">
+    <div id="cart">
+   <span class="icon fa fa-shopping-cart"></span> 
+  <div class="heading">
+    <h4>Shopping Cart</h4>
+    <a href="#" data-toggle="modal" data-target="#myModal" ><span id="cart-total"> </span></a></div>
+        </div></div>
+          <div class="pull-left wrap-menu">
+
+        <!--menu-->     
+<div id="pav-mainnav">
+
+            <div class="navbar-inverse">
+                  <div class="pav-megamenu">
+  <div class="navbar navbar-default">
+    <div id="mainmenutop" class="megamenu" role="navigation">
+      <div class="navbar-header">
+      <a href="javascript:;" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </a>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav megamenu">
+      <li class="home" >
+          <%= link_to 'Home', store_path%>
+      </li>
+
+        <li class="pav-parrent" >
+          <%= link_to "My Ebooks", user_profile_path%>
+          </li>
+
+          <li class="parent dropdown pav-parrent" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title">Categories</span><b class="caret"></b></a><div class="dropdown-menu level1"  ><div class="dropdown-menu-inner"><div class="row"><div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" ><div class="mega-col-inner"><ul>
+            <li>
+            <%@categories.each do |cate|%>
+            <%= link_to(cate.name, {controller: "store", action: "index", id: cate.id})%>
+            <%end%>
+            </li>
+          </ul></div></div></div></div></div></li>
+          <!--admin-->
+          <% if current_admin_user || current_user %>
+          <li class="parent dropdown pav-parrent" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="menu-title"><% if current_admin_user%>
+                      <%= current_admin_user.email%>
+                     
+          </span><b class="caret"></b></a>
+          <div class="dropdown-menu level1"  >
+            <div class="dropdown-menu-inner">
+              <div class="row">
+                <div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" >
+                  <div class="mega-col-inner">
+                  <ul>
+            <li>           
+            <%= link_to "Dashboard", "/admin"%>
+            <%= link_to "Create product",  new_product_path%>
+            <%= link_to "List all products", products_path%>
+            <%= link_to "Logout", destroy_admin_user_session_path, method: :delete%>
+                  <% end %>
+          
+          <% if user_signed_in?%>
+                      <%= current_user.username%>
+                     
+          </span><b class="caret"></b></a>
+          <div class="dropdown-menu level1"  >
+            <div class="dropdown-menu-inner">
+              <div class="row">
+                <div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" >
+                  <div class="mega-col-inner">
+                  <ul>
+                    <li>           
+                     <%= link_to "My Ebooks", user_profile_path%>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+                     <% end %>
+                  <% end %>
+                    </li>
+            </li>
+       <li class="pav-parrent" >
+          <%= link_to "Login", new_user_session_path%>
+          </li>
+          </ul></div></div></div></div></div>
+        
+         <!-- user -->
+         
+           
+        
+         </ul> </div></div>
+    </div>
+  </div>
+</div>              </div>
+          
+</div>
+</div>
+  
+  
+      
+  </section>
+</section>
+
+
+
+
+<script type="text/javascript">
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 300) {
+        //clearHeader, not clearheader - caps H
+        $("#header-main").addClass("shadow");
+    }else{
+      $("#header-main").removeClass("shadow");
+    }
+}); //missing );
+</script>
+<br><br><br>
