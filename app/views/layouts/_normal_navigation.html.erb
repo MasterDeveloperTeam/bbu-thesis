@@ -12,14 +12,6 @@
                         <div id="logo"><a href="index-route=common_home.php.html"><%= image_tag "logo.png" %></a></div>
                       
           </div>
-                  <div class="header-right pull-right wrap-cart hidden-xs ">
-    <div id="cart">
-   <span class="icon fa fa-shopping-cart"></span> 
-  <div class="heading">
-    <h4>Shopping Cart</h4>
-    <a href="#" data-toggle="modal" data-target="#myModal" ><span id="cart-total"> </span></a></div>
-        </div></div>
-          <div class="pull-left wrap-menu">
 
         <!--menu-->     
 <div id="pav-mainnav">
@@ -66,7 +58,7 @@
                   <div class="mega-col-inner">
                   <ul>
             <li>           
-            <%= link_to "Dashboard", "/admin"%>
+            <%= link_to "Dashboard", admin_dashboard_path%>
             <%= link_to "Create product",  new_product_path%>
             <%= link_to "List all products", products_path%>
             <%= link_to "Logout", destroy_admin_user_session_path, method: :delete%>
@@ -80,7 +72,7 @@
             <div class="dropdown-menu-inner">
               <div class="row">
                 <div class="mega-col col-xs-12 col-sm-12 col-md-12" data-type="menu" >
-                  <div class="mega-col-inner">
+                 <div class="mega-col-inner">
                   <ul>
                     <li>           
                      <%= link_to "My Ebooks", user_profile_path%>
@@ -89,9 +81,12 @@
                   <% end %>
                     </li>
             </li>
-       <li class="pav-parrent" >
+          <% if current_admin_user%>
+          <% else %>
+         <li class="pav-parrent" >
           <%= link_to "Login", new_user_session_path%>
           </li>
+          <% end %>
           </ul></div></div></div></div></div>
         
          <!-- user -->

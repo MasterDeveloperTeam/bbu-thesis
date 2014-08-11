@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :authenticate_admin_user, only:[:index]
+  before_action :authenticate_admin_user!, only:[:index]
   before_action :authenticate_user!, :unless => proc {|c| c.devise_controller?},only: [:create, :new]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only:[:new, :create, :show]
@@ -77,6 +77,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :user_id, :company, :zipcode, :city)
+      params.require(:order).permit(:name, :address, :user_id, :company, :zipcode, :city, :country)
     end
 end

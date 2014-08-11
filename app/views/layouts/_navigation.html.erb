@@ -66,8 +66,9 @@
                   <div class="mega-col-inner">
                   <ul>
             <li>           
-            <%= link_to "Dashboard", "/admin"%>
+            <%= link_to "Dashboard", admin_dashboard_path%>
             <%= link_to "Create product",  new_product_path%>
+            <%= link_to "List all orders", orders_path%>
             <%= link_to "List all products", products_path%>
             <%= link_to "Logout", destroy_admin_user_session_path, method: :delete%>
                   <% end %>
@@ -89,9 +90,13 @@
                   <% end %>
                     </li>
             </li>
+            <% if !current_admin_user%>
          <li class="pav-parrent" >
+         
           <%= link_to "Login", new_user_session_path%>
+         
           </li>
+          <% end %>
           </ul></div></div></div></div></div>
         
          <!-- user -->
