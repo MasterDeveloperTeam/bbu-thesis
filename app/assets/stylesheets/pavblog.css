@@ -80,10 +80,12 @@
 
  .pav-blog .image  {
  	text-align: center;
+    
  }
  .image >  img{
   height: 200px;
-  width:300px;
+  width:200px;
+  border: 1px solid #ddd;
 }
  .pav-blogs .blog-item,
 .pav-filter-blogs .blog-item{

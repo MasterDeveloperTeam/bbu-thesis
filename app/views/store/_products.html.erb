@@ -1,7 +1,7 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
  <%@products.each do |product|%>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                             <div class="col-item">
                                 <div class="photo">
                                     <%= link_to image_tag(product.image_url, :class => 'img-thumbnail'), store_show_path(product_id: product)%>
@@ -16,18 +16,11 @@
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                           <% if @cart.purchased_at !=nil %>
-                                          <script src="http://max.jotfor.ms/min/g=feedback2" type="text/javascript">
-                                            new JotformFeedback({
-                                            formID=42174990568466
-                                            windowTitle:'ពិនិត្យមើល My ebooks, Check My ebooks',
-                                            background:'#FFA500',
-                                            fontColor:'#FFFFFF',
-                                            type:false,
-                                            height:0,
-                                            width:700,
-                                            openOnLoad:true
-                                            });
-                                            </script>
+                                          <script type="text/javascript">
+                                                $(document).ready(function () {
+                                                   alert("Please check your ebook in 'My Ebook' ");
+                                                });
+                                          </script>
 
                                              <% if @cart.line_items.exists?(:product_id => product.id)%>
                                         &nbsp;&nbsp;&nbsp; <%=link_to 'Download', product.pdf.url, :class => "btn btn-default btn-xs"%>
@@ -39,7 +32,7 @@
                                         <p class="btn-add"><i class="fa fa-shopping-cart"></i><br><%=link_to 'Add to cart',line_items_path(product_id: product), method: :post, remote: true%>
                                  </p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><br><%=link_to 'More detail', store_show_path(product_id: product, anchor: "detail")%></p>
+                                            <i class="fa fa-list"></i><br><%=link_to 'More', store_show_path(product_id: product, anchor: "detail")%></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>

@@ -36,15 +36,15 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :zipcode, :class => "col-lg-2 control-label" %>
-    <div class="col-lg-10">
-      <%= f.text_field :zipcode, :class => "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
     <%= f.label :country, :class => "col-lg-2 control-label" %>
     <div class="col-lg-10">
       <%= f.country_code_select(:country) %>
+    </div>
+  </div>
+    <div class="form-group">
+    <%= f.label :zipcode, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :zipcode, :class => "form-control" %>
     </div>
   </div>
   <div class="form-group">

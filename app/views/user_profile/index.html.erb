@@ -12,9 +12,8 @@
                 <div class="col-md-6 no-pad">
                     <div class="user-pad">
                         <h3>Welcome back,  <%= current_user.username%></h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i> <%current_user.orders.each do |order|%>
-                            <%= order.address %>
-                            <% end %>
+                        <h4 class="white"><i class="fa fa-check-circle-o"></i>
+                            
                             </h4>
                         <h4 class="white"><i class="fa fa-envelope"></i>&nbsp;<%= current_user.email%></h4>
                         <button type="button" class="btn btn-labeled btn-info" href="#">

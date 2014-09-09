@@ -87,10 +87,10 @@
                      <%= link_to "My Ebooks", user_profile_path%>
                     <%= link_to "Logout", destroy_user_session_path, method: :delete%>
                      <% end %>
-                  <% end %>
+                
                     </li>
             </li>
-            <% if !current_admin_user%>
+            <% elsif !current_admin_user%>
          <li class="pav-parrent" >
          
           <%= link_to "Login", new_user_session_path%>
@@ -107,9 +107,6 @@
           
 </div>
 </div>
-  
-  
-      
   </section>
 </section>
 
@@ -121,11 +118,16 @@
     var scroll = $(window).scrollTop();
 
      //>=, not <=
-    if (scroll >= 300) {
+    if (scroll >= 10) {
         //clearHeader, not clearheader - caps H
         $("#header-main").addClass("shadow");
     }else{
       $("#header-main").removeClass("shadow");
     }
 }); //missing );
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    //alert("thkeam");
+  });
 </script>

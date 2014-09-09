@@ -33,15 +33,15 @@
                                         <br>Adobe photoshop, Adobe indesign, Adobe illustrator, Adobe after effect<br>និងធ្វើអោយអ្នកចេះក្នុងការ Design យ៉ាងឆាប់រហ័ស</div>
                                 </div>
                                 <div class="item ">
-                                     <%= image_tag "slide2.jpg" %></a>
-                                        <div class="pav-caption hatch  big-caption purple" style="top:85px;left:50px;">
+                                     <%= image_tag "Maintenent-Slide.jpg" %></a>
+                                        <div class="pav-caption hatch  big-caption purple" style="top:85px;left:50px;color:#fff;">
                                         Maintenance</div>
                                                 <div class="pav-caption expandOpen desc" style="top:130px;left:50px;color:#fff;background:rgba(78,0,0,0.5);margin-top:15px;">
-                                       សិក្សាពីការជួសជុល Hardware , Software របស់ computer</div>
+                                       សិក្សាពីការជួសជុល Hardware , Software របស់ computer. សិក្សាពីការតំឡើង Software និងការតំឡើង Hardware </div>
                                               
                                 </div>
                                 <div class="item ">
-                                     <%= image_tag "slide3.jpg" %></a>
+                                     <%= image_tag "1.gif" %></a>
                                      <div class="pav-caption pullDown  big-caption white" style="top:85px;left:50px;background:#DC572E;">
                                       Register today! </div>
                                               <div class="pav-caption hatch desc white" style="top:130px;left:50px;background:#DC572E;z-index:1;margin-top:5px;padding:10px;">
@@ -75,14 +75,18 @@
 </section>
 
 <!-- slide-header -->
+
 <div class="container">
 <blockquote>
-  <p>Cateloge</p>
+  <p>Categories or product listing here</p>
 </blockquote>
+<hr>
  <div id="products" class="row">
     <%= render "products"%>
   </div><!-- /.row -->
+   <hr>
   </div>
+
 <section id="pav-mass-bottom">
   <div class="container">
         <div class="row"> 
@@ -125,7 +129,7 @@
 
 <div class="col-lg-9 col-md-9 col-sm-9">
 <div class="box pav-block bloglatest">
-  <div class="box-heading"><span>Latest Blog</span></div>
+  <div class="box-heading"><span>Latest Ebooks</span></div>
           <div class="pavblog-latest clearfix box-content">
             <div class="row">
             <% @latest_product.each do |latest| %>
