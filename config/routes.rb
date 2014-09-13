@@ -10,7 +10,7 @@ DepotTest::Application.routes.draw do
   devise_for :models
   devise_for :users
   resources :line_items
-
+  resources :categories
   resources :carts
 
   get "store/index"

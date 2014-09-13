@@ -19,6 +19,7 @@
 #
 
 class Product < ActiveRecord::Base
+	mount_uploader :image_url, ImaeUrlUploader
 	has_many :line_items
 	belongs_to :user
 	belongs_to :category

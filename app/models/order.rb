@@ -15,6 +15,8 @@
 #
 
 class Order < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged 
   belongs_to :user
   has_many :line_items, :dependent => :destroy
   has_many :payment_notifications, :dependent => :destroy

@@ -2,10 +2,6 @@
 <br><br><br>
 <div class="container">
 <div class="page-header">
-  <%= link_to new_order_path, :class => 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Order
-  <% end %>
   <h1>Listing orders</h1>
 </div>
 
@@ -14,32 +10,41 @@
     <thead>
       <tr>
             <th>Name</th>
-            <th>Username</th>
+            <th>Email</th>
             <th>Address</th>
             <th>Company</th>
             <th>City</th>
             <th>Zipcode</th>
             <th>Country</th>
             <th>Status</th>
-        <th></th>
-        <th></th>
+            <th>Purchased_at</th>
+            
+        
       </tr>
     </thead>
 
     <tbody>
       <%= content_tag_for(:tr, @orders) do |order| %>
             <td><%= order.name %></td>
-            <td><%= order.user.username %></td>
+            <td><%= order.user.email %></td>
             <td><%= order.address %></td>
             <td><%= order.company %></td>
             <td><%= order.city %></td>
             <td><%= order.zipcode%></td>
             <td><%= order.country%></td>
             <td><% if order.purchased_at? %>
-             <em>Paid</em> 
+             <em>Paid</em>
              <% else %>
              Not Paid
-            <% end %></td>
+            </td>
+            <% end %>
+
+             <% if order.purchased_at?%>
+            <td ><%=(order.purchased_at).strftime("%B %e, %y")%></td>
+            <% else %>
+            <td style="color:red;">Not purchased
+            </td>
+            <% end %>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tbody>
