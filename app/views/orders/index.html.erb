@@ -40,7 +40,7 @@
             <% end %>
 
              <% if order.purchased_at?%>
-            <td ><%=(order.purchased_at).strftime("%B %e, %y")%></td>
+            <td style="color:blue;"><%=(order.purchased_at).strftime("%B %e, %y")%></td>
             <% else %>
             <td style="color:red;">Not purchased
             </td>
