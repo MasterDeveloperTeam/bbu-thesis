@@ -64,7 +64,7 @@
                         <% if order.purchased_at?%>
                          <%order.line_items.each do |item|%>
                     <li><a href="#">
-                      <%= item.product.title%> <%=link_to 'Download', item.product.pdf.url, :class => "btn btn-default btn-xs"%>
+                      <%= item.product.title%> <%=link_to 'Download', item.product.pdf.url(:original, false), :class => "btn btn-default btn-xs"%>
                     </a>
                     </li>
                     <% end %>

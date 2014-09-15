@@ -9,11 +9,20 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @orders.to_csv }
+      format.xls { send_data @orders.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    if @cart.line_items.empty?
+      redirect_to store_url, notice: "Your cart is empty."
+      return
+    end
   end
 
   # GET /orders/new

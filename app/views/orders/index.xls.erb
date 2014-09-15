@@ -1,0 +1,44 @@
+
+  <table>
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Company</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>Country</th>
+            <th>Status</th>
+            <th>Purchased_at</th>
+            
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @orders) do |order| %>
+            <td><%= order.name %></td>
+            <td><%= order.user.email %></td>
+            <td><%= order.address %></td>
+            <td><%= order.company %></td>
+            <td><%= order.city %></td>
+            <td><%= order.zipcode%></td>
+            <td><%= order.country%></td>
+            <td><% if order.purchased_at? %>
+             <em>Paid</em>
+             <% else %>
+             Not Paid
+            </td>
+            <% end %>
+
+             <% if order.purchased_at?%>
+            <td style="color:blue;"><%=(order.purchased_at).strftime("%B %e, %y")%></td>
+            <% else %>
+            <td style="color:red;">Not purchased
+            </td>
+            <% end %>
+      
+      <% end %>
+    </tbody>
+  </table>

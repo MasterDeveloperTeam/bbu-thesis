@@ -30,7 +30,7 @@ class Product < ActiveRecord::Base
 	has_attached_file 	:pdf,
 				:url => "/assets/products/:id/:style/:basename.:extension",
   				:path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
-	
+				
 	validates_attachment_content_type :pdf,
 						      :content_type => [ 'application/pdf' ],
 						      :message => "only pdf files are allowed"
